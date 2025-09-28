@@ -18,13 +18,18 @@
         <img alt="catapult" src="assets/catapult-with-logo.png"></img>
     </header>
     <main>
-        <form>
-            <div id="welcome">Welcome</div>
-            <label class="form-label" for="username">Username</label>
-            <input id="username" type="text">
-            <label class="form-label" for="user-password">Password</label>
-            <input id="user-password" type="password">
-            <button id="sign-in" type="submit">Sign In</button>
+        <form autocomplete="off">
+            <div id="welcome">Welcome!</div>
+            <div class="form-content">
+                <label class="form-label" for="username">Username</label>
+                <input id="username" type="text">
+                <label class="form-label form-label__password" for="user-password">Password</label>
+                <input id="user-password" type="password">
+                <button id="sign-in" type="submit">Sign In</button>
+                <div class="create-account">
+                    <p>Create an Account</p>
+                </div>
+            </div>
         </form>
     </main>
 </body>
