@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: #d6fcde;
+}
+
+.brand-header {
+    width: 20%;
+    height: auto;
+    margin: auto;
+}
+
+.brand-header img {
+    width: 100%;
+    height: auto;
+}
+
+main {
+    margin: auto;
+    width: 40%;
+    background-color: pink;
+    font-family: "Dosis", sans-serif;
+}
+
+
+.form-label {
+    display: block;
+}
+
+#username,
+#user-password {
+    display: block;
+}
+
+#sign-in {
+    display: block;
+}
