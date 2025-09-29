@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="create-account.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Dosis:wght@200..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="brand-header">
+        <img alt="catapult" src="../assets/catapult-with-logo.png"></img>
+    </header>
+    <main>
+        <form autocomplete="off">
+            <div id="welcome">Welcome!</div>
+            <div class="form-content">
+                <div class="name-field">
+                    <div class="fname-field">
+                        <label class="form-label" for="first-name">First Name<span class="asterisk">*</span></label>
+                        <input id="first-name" class="input-field" type="text">
+                    </div>
+                    <div class="lname-field">
+                        <label class="form-label" for="last-name">Last Name<span class="asterisk">*</span></label>
+                        <input id="last-name" class="input-field" type="text">
+                    </div>
+                </div>
+                <label class="form-label" for="username">Username<span class="asterisk">*</span></label>
+                <input id="username" class="input-field" type="text">
+                <label class="form-label" for="email">Email<span class="asterisk">*</span></label>
+                <input id="email" class="input-field" type="text">
+                <label class="form-label form-label__password" for="user-password">Password<span
+                        class="asterisk">*</span></label>
+                <input id="user-password" class="input-field" type="password">
+                <label class="form-label" for="confirm-password">Confirm Password<span class="asterisk">*</span></label>
+                <input id="confirm-password" class="input-field" type="password">
+                <button id="sign-in" type="submit">Sign In</button>
+                <div class="create-account">
+                    <p>Create an Account</p>
+                </div>
+            </div>
+        </form>
+    </main>
+    <script src="create-account.js"></script>
+</body>
+
+</html>

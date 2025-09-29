@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: #d6fcde;
+}
+
+.brand-header {
+    width: 100%;
+    min-width: 250px;
+    height: auto;
+}
+
+.brand-header img {
+    width: 20%;
+    display: block;
+    margin: auto;
+    height: auto;
+}
+
+main {
+    width: 100%;
+}
+
+form {
+    margin: auto;
+    width: 768px;
+    min-width: 500px;
+    background-color: white;
+    font-family: "Dosis", sans-serif;
+    border-radius: 10px;
+}
+
+#welcome {
+    font-size: 3vw;
+    width: fit-content;
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.form-content {
+    width: 70%;
+    margin: auto;
+    padding-bottom: 30px;
+}
+
+.form-label {
+    font-size: 28px;
+    display: block;
+    padding-top: 20px;
+    width: fit-content;
+    padding-bottom: 10px;
+}
+
+.asterisk {
+    color: rgb(178, 16, 16);
+}
+
+.name-field {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fname-field,
+.lname-field {
+    width: 45%;
+}
+
+.input-field {
+    font-size: 20px;
+    width: 100%;
+    display: block;
+    margin: auto;
+    padding: 10px;
+    border-radius: 5px;
+    border-color: rgba(0, 0, 0, 0.219);
+}
+
+#sign-in {
+    display: block;
+    margin: auto;
+    color: #003D20;
+    background-color: #B1CD2B;
+    border-color: transparent;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 40px;
+    font-family: "Dosis", sans-serif;
+    width: 50%;
+    padding: 5px 20px 5px;
+    transition: 0.5s;
+}
+
+#sign-in:hover {
+    cursor: pointer;
+    background-color: #D2E47D;
+}
+
+.create-account {
+    width: fit-content;
+    margin: auto;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.create-account:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: black;
+}
+
+@media only screen and (max-width: 768px) {
+
+    form {
+        width: 80%;
+    }
+
+}
