@@ -79,7 +79,7 @@ form {
     border-color: rgba(0, 0, 0, 0.219);
 }
 
-#sign-in {
+#join {
     display: block;
     margin: auto;
     color: #003D20;
@@ -94,23 +94,11 @@ form {
     transition: 0.5s;
 }
 
-#sign-in:hover {
+#join:hover {
     cursor: pointer;
     background-color: #D2E47D;
 }
 
-.create-account {
-    width: fit-content;
-    margin: auto;
-    margin-top: 20px;
-    font-size: 20px;
-}
-
-.create-account:hover {
-    cursor: pointer;
-    text-decoration: underline;
-    text-decoration-color: black;
-}
 
 @media only screen and (max-width: 768px) {
 
