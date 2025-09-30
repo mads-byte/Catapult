@@ -17,35 +17,60 @@
     <header class="brand-header">
         <img alt="catapult" src="../assets/catapult-with-logo.png"></img>
     </header>
-    <main>
-        <form autocomplete="off">
-            <div id="form-header">Start your journey to financial success—create your free account today.</div>
-            <div class="form-content">
-                <div class="name-field">
-                    <div class="fname-field">
-                        <label class="form-label" for="first-name">First Name<span class="asterisk">*</span></label>
-                        <input id="first-name" class="input-field" type="text">
-                    </div>
-                    <div class="lname-field">
-                        <label class="form-label" for="last-name">Last Name<span class="asterisk">*</span></label>
-                        <input id="last-name" class="input-field" type="text">
-                    </div>
+    <div class="margin-container">
+        <div class="star-container"><img alt="green stars" src="../assets/stars.png"> <img alt="green stars"
+                src="../assets/stars.png"></div>
+        <main>
+            <section class="about-us">
+                <div id="scroll">
+                    Scroll Right to Get Started <i class="fa-solid fa-arrow-right"></i>
                 </div>
-                <label class="form-label" for="username">Username<span class="asterisk">*</span></label>
-                <input id="username" class="input-field" type="text">
-                <label class="form-label" for="email">Email<span class="asterisk">*</span></label>
-                <input id="email" class="input-field" type="text">
-                <label class="form-label form-label__password" for="user-password">Password<span
-                        class="asterisk">*</span></label>
-                <input id="user-password" class="input-field" type="password">
-                <label class="form-label" for="confirm-password">Confirm Password<span class="asterisk">*</span></label>
-                <input id="confirm-password" class="input-field" type="password">
-                <p id="error"></p>
-                <button id="join" type="submit">Join</button>
-            </div>
-        </form>
-    </main>
+                <div class="img-container"><img id="about-us-img" src="../assets/ourMission.png"></div>
+                <div class="about-paragraph">
+                    We seek to make financial literacy and wealth building knowledge accessible for all and level uneven
+                    playing fields. "One way in which financial literacy is gained is via intergenerational transfer
+                    from
+                    one’s parents and grandparents" according to a <a id="study-link"
+                        href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2256791#:~:text=It%20is%20also%20influenced%20by,literacy%20between%20generations%20than%20others.">Massey
+                        University study</a> on The Intergenerational Transfer of Financial Literacy. But what if
+                    financial
+                    literacy is lower in a community that has been historically marginalized? Catapult aims to start
+                    financial education early, preferably before youths enter the workforce. This way, they are fully
+                    equipped with the tools they need to be financially successful and start building wealth young.
+                </div>
+            </section>
+            <form autocomplete="off">
+                <div id="form-header">Start your journey to financial success—create your free account today.</div>
+                <div class="form-content">
+                    <div class="name-field">
+                        <div class="fname-field">
+                            <label class="form-label" for="first-name">First Name<span class="asterisk">*</span></label>
+                            <input id="first-name" class="input-field" type="text">
+                        </div>
+                        <div class="lname-field">
+                            <label class="form-label" for="last-name">Last Name<span class="asterisk">*</span></label>
+                            <input id="last-name" class="input-field" type="text">
+                        </div>
+                    </div>
+                    <label class="form-label" for="username">Username<span class="asterisk">*</span></label>
+                    <input id="username" class="input-field" type="text">
+                    <label class="form-label" for="email">Email<span class="asterisk">*</span></label>
+                    <input id="email" class="input-field" type="text">
+                    <label class="form-label form-label__password" for="user-password">Password<span
+                            class="asterisk">*</span></label>
+                    <input id="user-password" class="input-field" type="password">
+                    <label class="form-label" for="confirm-password">Confirm Password<span
+                            class="asterisk">*</span></label>
+                    <input id="confirm-password" class="input-field" type="password">
+                    <p id="error"></p>
+                    <button id="join" type="submit">Join</button>
+                </div>
+            </form>
+        </main>
+        <div class="star-container"><img src="../assets/stars.png"><img src="../assets/stars.png"></div>
+    </div>
     <script src="create-account.js"></script>
+    <script src="https://kit.fontawesome.com/3cc749efd0.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
