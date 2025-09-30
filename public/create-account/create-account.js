@@ -4,8 +4,9 @@ const username = document.getElementById('username')
 const email = document.getElementById('email')
 const password = document.getElementById('user-password')
 const confirmPassword = document.getElementById('confirm-password')
+const errorMessage = document.getElementById('error')
 const join = document.getElementById('join')
-
+const red = '#ffbab5'
 
 const nameRegex = /^[a-zA-Z]{2,16}$/ //regex to match a minimum of 2 letters and a maximum of 16 (only letters)
 
@@ -64,12 +65,40 @@ function checkConfirm() {
 
 
 join.addEventListener('click', (e) => {
-    e.preventDefault()
-    console.log(`all fields filled: ${checkRequired()}`)
-    console.log(`first name: ${checkFirstName()}`)
-    console.log(`last name: ${checkLastName()}`)
-    console.log(`username: ${checkUsername()}`)
-    console.log(`email: ${checkEmail()}`)
-    console.log(`password: ${checkPassword()}`)
-    console.log(`confirm password: ${checkConfirm()}`)
+    firstName.style.backgroundColor = 'white'
+    lastName.style.backgroundColor = 'white'
+    username.style.backgroundColor = 'white'
+    email.style.backgroundColor = 'white'
+    password.style.backgroundColor = 'white'
+    confirmPassword.style.backgroundColor = 'white'
+    if (checkRequired() === false) {
+        e.preventDefault()
+        errorMessage.textContent = 'Fill out all required fields'
+    } else if (checkFirstName() === false) {
+        e.preventDefault()
+        firstName.style.backgroundColor = red
+        errorMessage.textContent = 'Enter a valid first name'
+    } else if (checkLastName() === false) {
+        e.preventDefault()
+        lastName.style.backgroundColor = red
+        errorMessage.textContent = 'Enter a valid last name'
+    } else if (checkUsername() === false) {
+        e.preventDefault()
+        username.style.backgroundColor = red
+        errorMessage.textContent = 'Username must contain at least one letter and be a minimum of 4 characters'
+    } else if (checkEmail() === false) {
+        e.preventDefault()
+        email.style.backgroundColor = red
+        errorMessage.textContent = 'Enter a valid email'
+    } else if (checkPassword() === false) {
+        e.preventDefault()
+        password.style.backgroundColor = red
+        errorMessage.textContent = 'Password must be at least 8 characters with at least one number and at least one special character'
+    } else if (checkConfirm() === false) {
+        e.preventDefault()
+        confirmPassword.style.backgroundColor = red
+        errorMessage.textContent = `"Password" and "Confirm Password" must match`
+    } else {
+        errorMessage.textContent = ''
+    }
 })
