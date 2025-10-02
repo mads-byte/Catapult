@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.dashboard-header {
+    display: flex;
+    align-items: center;
+}
+
+#logo-container {
+    width: 20%;
+    min-width: 200px;
+    padding: 20px;
+    padding-left: 20px;
+}
+
+#logo-container img {
+    max-width: 100%;
+}
+
+#logout-container {
+    font-family: "Dosis", sans-serif;
+    color: rgb(191, 20, 20);
+    font-size: 30px;
+    padding-left: 20px;
+}
+
+#logout-container:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#logout-container a,
+#logout-container a:visited,
+#logout-container a:active {
+    color: rgb(191, 20, 20);
+    text-decoration: none;
+}
+
+.course-content {
+    background-color: #D2E47D;
+    width: 60%;
+    padding: 20px;
+    border-radius: 10px;
+    margin: auto;
+}
+
+
+.lesson-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 35px;
+}
+
+#lesson-div {
+    max-height: 40px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.lesson-title {
+    width: fit-content;
+}
+
+#arrow {
+    width: fit-content;
+    transition: 0.5s;
+}
+
+#arrow:hover {
+    cursor: pointer;
+}
+
+.lesson-content {
+    background-color: white;
+    height: fit-content;
+    width: 90%;
+    margin: auto;
+    flex-shrink: 0;
+    padding: 30px;
+}
+
+#content-hide {
+    background-color: aqua;
+    width: fit-content;
+    margin: auto;
+}
+
+#content-hide:hover {
+    cursor: pointer;
+}
