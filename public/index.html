@@ -5,11 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Dosis:wght@200..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-
+    <header class="brand-header">
+        <img alt="catapult" src="assets/catapult-with-logo.png"></img>
+    </header>
+    <main>
+        <form autocomplete="off">
+            <div id="welcome">Welcome!</div>
+            <div class="form-content">
+                <label class="form-label" for="username">Username</label>
+                <input id="username" type="text">
+                <label class="form-label form-label__password" for="user-password">Password</label>
+                <input id="user-password" type="password">
+                <button id="sign-in" type="submit">Sign In</button>
+                <div class="create-account">
+                    <a href="create-account/create-account.html">
+                        <p>Create an Account</p>
+                    </a>
+                </div>
+            </div>
+        </form>
+    </main>
+    <script src="app.js"></script>
 </body>
 
 </html>
