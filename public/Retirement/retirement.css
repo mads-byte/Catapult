@@ -1,0 +1,48 @@
+ body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f7fa;
+      color: #333;
+    }
+    .slide {
+      padding: 40px;
+      border-bottom: 2px solid #ddd;
+    }
+    h1, h2 {
+      color: #2a4d8f;
+    }
+    .pros-cons {
+      display: flex;
+      gap: 40px;
+    }
+    .pros, .cons {
+      flex: 1;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    ul {
+      margin: 10px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background: #fff;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: center;
+    }
+    .interactive {
+      margin-top: 15px;
+      font-style: italic;
+      color: #666;
+    }
+    a {
+      color: #2a4d8f;
+      text-decoration: none;
+    }
