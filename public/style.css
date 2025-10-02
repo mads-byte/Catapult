@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: #d6fcde;
+}
+
+.brand-header {
+    width: 20vw;
+    min-width: 250px;
+    height: auto;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.brand-header img {
+    width: 100%;
+    height: auto;
+}
+
+main {
+    margin: auto;
+    margin-top: 50px;
+    width: 40%;
+    min-width: 600px;
+    background-color: white;
+    font-family: "Dosis", sans-serif;
+    border-radius: 10px;
+}
+
+#welcome {
+    font-size: 40px;
+    width: fit-content;
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.form-content {
+    width: 70%;
+    margin: auto;
+    padding-bottom: 30px;
+}
+
+.form-label {
+    font-size: 24px;
+    display: block;
+
+    width: fit-content;
+    padding-bottom: 10px;
+}
+
+.form-label__password {
+    padding-top: 20px;
+}
+
+#username,
+#user-password {
+    font-size: 24px;
+    width: 100%;
+    display: block;
+    margin: auto;
+    padding: 10px 10px 10px;
+    border-radius: 5px;
+    border-color: rgba(0, 0, 0, 0.219);
+}
+
+#sign-in {
+    display: block;
+    margin: auto;
+    color: #003D20;
+    background-color: #B1CD2B;
+    border-color: transparent;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 40px;
+    font-family: "Dosis", sans-serif;
+    width: 50%;
+    padding: 5px 20px 5px;
+    transition: 0.5s;
+}
+
+#sign-in:hover {
+    cursor: pointer;
+    background-color: #D2E47D;
+}
+
+.create-account a,
+.create-account a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+.create-account {
+    width: fit-content;
+    margin: auto;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.create-account:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: black;
+}
+
+@media only screen and (max-width: 768px) {
+
+    main {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+
+    main {
+        min-width: 90vw;
+    }
+
+    #welcome {
+        font-size: 30px;
+    }
+
+    .form-label {
+        font-size: 18px;
+    }
+
+    #username,
+    #user-password {
+        font-size: 16px;
+    }
+
+    #sign-in {
+
+        font-size: 24px;
+        width: 110%;
+
+    }
+}
