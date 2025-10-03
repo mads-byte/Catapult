@@ -38,78 +38,55 @@
     text-decoration: none;
 }
 
-.course-outline {
-    background-color: #d3e47d83;
+.course-content {
+    background-color: #D2E47D;
     width: 60%;
     padding: 20px;
     border-radius: 10px;
     margin: auto;
 }
 
-#roadmap {
-    font-family: "Dosis", sans-serif;
-    font-size: 50px;
-    font-weight: bold;
-}
-
-.section-header {
-    padding-top: 30px;
-    margin-top: 50px;
-    font-size: 55px;
-}
-
-.section-header2 {
-    padding-top: 30px;
-    margin-top: 50px;
-    padding-bottom: 5px;
-}
 
 .lesson-header {
     display: flex;
     justify-content: space-between;
-    font-family: "Dosis", sans-serif;
     font-size: 35px;
 }
 
-.lesson-div {
-    max-height: 45px;
+#lesson-div {
+    max-height: 40px;
     overflow: hidden;
-    transition: max-height 0.5s;
-    padding-top: 30px;
+    transition: 0.5s;
 }
 
 .lesson-title {
     width: fit-content;
 }
 
-.arrow {
+#arrow {
     width: fit-content;
+    transition: 0.5s;
 }
 
-.arrow:hover {
+#arrow:hover {
     cursor: pointer;
 }
 
-.lesson-description {
+.lesson-content {
     background-color: white;
     height: fit-content;
     width: 90%;
     margin: auto;
-    margin-top: 10px;
     flex-shrink: 0;
     padding: 30px;
-    font-family: "Dosis", sans-serif;
-    font-size: 24px;
-    text-align: center;
-
 }
 
-.content-hide {
+#content-hide {
+    background-color: aqua;
     width: fit-content;
     margin: auto;
-    font-size: 18px;
 }
 
-.content-hide:hover {
+#content-hide:hover {
     cursor: pointer;
 }
