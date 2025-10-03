@@ -63,29 +63,29 @@ arrow6.addEventListener('click', () => {
     toggleLesson(lessonDiv6, arrow6)
 })
 
-contentHide1.addEventListener('click', () => {
-    toggleLesson(lessonDiv1, arrow1)
-})
+// contentHide1.addEventListener('click', () => {
+//     toggleLesson(lessonDiv1, arrow1)
+// })
 
-contentHide2.addEventListener('click', () => {
-    toggleLesson(lessonDiv2, arrow2)
-})
+// contentHide2.addEventListener('click', () => {
+//     toggleLesson(lessonDiv2, arrow2)
+// })
 
-contentHide3.addEventListener('click', () => {
-    toggleLesson(lessonDiv3, arrow3)
-})
+// contentHide3.addEventListener('click', () => {
+//     toggleLesson(lessonDiv3, arrow3)
+// })
 
-contentHide4.addEventListener('click', () => {
-    toggleLesson(lessonDiv4, arrow4)
-})
+// contentHide4.addEventListener('click', () => {
+//     toggleLesson(lessonDiv4, arrow4)
+// })
 
-contentHide5.addEventListener('click', () => {
-    toggleLesson(lessonDiv5, arrow5)
-})
+// contentHide5.addEventListener('click', () => {
+//     toggleLesson(lessonDiv5, arrow5)
+// })
 
-contentHide6.addEventListener('click', () => {
-    toggleLesson(lessonDiv6, arrow6)
-})
+// contentHide6.addEventListener('click', () => {
+//     toggleLesson(lessonDiv6, arrow6)
+// })
 
 
 
