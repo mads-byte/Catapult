@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Future You: Retirement & Protection Timeline</title>
+    <link rel="stylesheet" href="slides.css" />
+  </head>
+  <body>
+
+      <!-- IF YOU SEE "aria-lablledby" IT IS FOR WEB ACESSABILITY (It's for describing content) -->
+    <main class="slideshow-container">
+      <!-- Slide 1 -->
+      <article class="slide active">
+        <div class="slide-content">
+          <section class="left-panel">
+            <header class="brand-header">
+              <img alt="catapult" src="/public/assets/catapult-with-logo.png" />
+            </header>
+            <h1>Future You: Retirement & Protection Timeline</h1>
+            <div class="divider"></div>
+            <p class="tagline">
+              The choices you make today affect how secure you'll be tomorrow.
+            </p>
+            <p class="module-intro">
+              In this <strong>module</strong> we will go over:
+            </p>
+            <ul class="module-list">
+              <li>
+                The most popular retirement investment plans (401(k) & Roth IRA)
+              </li>
+              <li>
+                And life insurance options (Whole life vs Term life insurance).
+              </li>
+            </ul>
+          </section>
+          <aside class="right-panel">
+            <dotlottie-wc
+              src="https://lottie.host/696669f3-1a22-4b18-b47b-a24e7f88fc31/o5HmsI14nh.lottie"
+              style="width: 600px; height: 600px"
+              autoplay
+              loop
+            ></dotlottie-wc>
+          </aside>
+        </div>
+        <nav class="slide-nav">
+          <span class="slide-counter">Starting Early (1/10)</span>
+          <button
+            class="next-btn"
+            onclick="changeSlide(1)"
+            aria-label="Next slide"
+          ></button>
+        </nav>
+      </article>
+
+      <!-- Slide 2 -->
+      <article class="slide" id="drag-drop-activity">
+        <div class="slide-content">
+          <section class="left-panel">
+            <h2>401(k) Pros vs Cons</h2>
+            <p>Drag each item into the correct category</p>
+
+            <div class="activity-container">
+              <!-- Card Stack -->
+              <ul class="card-stack">
+                <li class="card" draggable="true" data-answer="pro" data-id="1">
+                  <img src="images/drag_drop_icon.png" alt="" />
+                  <p>Employer match = instant return on your money</p>
+                </li>
+                <li class="card" draggable="true" data-answer="con" data-id="2">
+                  <img src="images/drag_drop_icon.png" alt="" />
+                  <p>Money is locked up until retirement</p>
+                </li>
+                <li class="card" draggable="true" data-answer="pro" data-id="3">
+                  <img src="images/drag_drop_icon.png" alt="" />
+                  <p>High contribution limits</p>
+                </li>
+                <li class="card" draggable="true" data-answer="con" data-id="4">
+                  <img src="images/drag_drop_icon.png" alt="" />
+                  <p>
+                    Limited investment choices (your employer picks the options)
+                  </p>
+                </li>
+              </ul>
+
+              <!-- Drop Zones -->
+              <div class="drop-zones">
+                <article class="drop-zone pros">
+                  <h3>Pros</h3>
+                  <ul class="drop-area" id="pros-zone"></ul>
+                </article>
+                <article class="drop-zone cons">
+                  <h3>Cons</h3>
+                  <ul class="drop-area" id="cons-zone"></ul>
+                </article>
+              </div>
+            </div>
+
+            <button class="submit-btn" onclick="checkAnswers()" disabled>
+              Submit Answers
+            </button>
+            <div class="feedback" id="slide2-feedback" aria-live="polite"></div>
+          </section>
+          <aside class="right-panel"></aside>
+        </div>
+        <nav class="slide-nav">
+          <button
+            class="prev-btn"
+            onclick="changeSlide(-1)"
+            aria-label="Previous slide"
+          >
+            ←
+          </button>
+          <span class="slide-counter">2/10</span>
+          <button
+            class="next-btn"
+            onclick="changeSlide(1)"
+            aria-label="Next slide"
+          >
+            →
+          </button>
+        </nav>
+      </article>
+
+      <!-- Slide 3 -->
+      <article class="slide" id="drag-drop-activity">
+        <div class="slide-content">
+          <section class="left-panel">
+            <h2>Roth IRA Pros & Cons</h2>
+            <p>Drag each item into the correct category</p>
+
+            <div class="activity-container">
+              <!-- Card Stack -->
+              <ul class="card-stack">
+                <li class="card" draggable="true" data-answer="pro" data-id="1">
+                  <img src="images/drag_drop_icon.png" alt="" />
+                  <p>Tax-free growth and withdrawals</p>
+                </li>
+                <li class="card" draggable="true" data-answer="con" data-id="2">
+                  <img src="images/drag_drop_icon.png" alt="" />
+                  <p>Lower contribution limits than 401(k)</p>
+                </li>
+                <li class="card" draggable="true" data-answer="pro" data-id="3">
+                  <img src="images/drag_drop_icon.png" alt="" />
+                  <p>Flexible investment choices</p>
+                </li>
+                <li class="card" draggable="true" data-answer="con" data-id="4">
+                  <img src="images/drag_drop_icon.png" alt="" />
+                  <p>Income restrictions (not everyone can contribute)</p>
+                </li>
+              </ul>
+
+              <!-- Drop Zones -->
+              <div class="drop-zones">
+                <article class="drop-zone pros">
+                  <h3>Pros</h3>
+                  <ul class="drop-area" id="pros-zone"></ul>
+                </article>
+                <article class="drop-zone cons">
+                  <h3>Cons</h3>
+                  <ul class="drop-area" id="cons-zone"></ul>
+                </article>
+              </div>
+            </div>
+
+            <button class="submit-btn" onclick="checkAnswers()" disabled>
+              Submit Answers
+            </button>
+            <div class="feedback" id="slide2-feedback" aria-live="polite"></div>
+          </section>
+          <aside class="right-panel"></aside>
+        </div>
+        <nav class="slide-nav">
+          <button
+            class="prev-btn"
+            onclick="changeSlide(-1)"
+            aria-label="Previous slide"
+          >
+            ←
+          </button>
+          <span class="slide-counter">3/10</span>
+          <button
+            class="next-btn"
+            onclick="changeSlide(1)"
+            aria-label="Next slide"
+          >
+            →
+          </button>
+        </nav>
+      </article>
+
+      <!-- Slide 4 -->
+      <article class="slide">
+        <div class="slide-content">
+          <section class="left-panel">
+            <header class="logo">CATAPULT</header>
+            <h2>Slide 4</h2>
+            <h2 id="video-heading">Roth IRA vs 401(k) — Comparison Video</h2>
+            <p class="interactive">Interactive: Roth IRA vs 401k video.</p>
+            <div class="video-container">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube-nocookie.com/embed/5MppmjJ-HNk?si=bYlyzzagDFNpQkqi"
+                title="Roth IRA vs 401(k) comparison video"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              >
+              </iframe>
+            </div>
+          </section>
+          <aside class="right-panel">
+            <div class="quiz-container">
+              <h3 class="quiz-title">Quiz: Roth IRA vs 401(k) Comparison</h3>
+
+              <div class="quiz-question" id="question-1">
+                <p class="question-text"><strong>Question 1:</strong> What is the biggest difference in how you open these accounts?</p>
+                <div class="quiz-options">
+                  <label class="quiz-option">
+                    <input type="radio" name="q1" value="A">
+                    <span>A) A 401(k) is opened through your employer, while a Roth IRA you open yourself</span>
+                  </label>
+                  <label class="quiz-option">
+                    <input type="radio" name="q1" value="B">
+                    <span>B) A Roth IRA requires an employer, while a 401(k) you open yourself</span>
+                  </label>
+                  <label class="quiz-option">
+                    <input type="radio" name="q1" value="C">
+                    <span>C) Both require an employer to open</span>
+                  </label>
+                  <label class="quiz-option">
+                    <input type="radio" name="q1" value="D">
+                    <span>D) Both can only be opened by a financial advisor</span>
+                  </label>
+                </div>
+                <div class="quiz-explanation" id="explanation-1"></div>
+              </div>
+
+              <div class="quiz-question" id="question-2" style="display: none;">
+                <p class="question-text"><strong>Question 2:</strong> What is a major benefit that 401(k) plans often offer that Roth IRAs don't?</p>
+                <div class="quiz-options">
+                  <label class="quiz-option">
+                    <input type="radio" name="q2" value="A">
+                    <span>A) Tax-free withdrawals in retirement</span>
+                  </label>
+                  <label class="quiz-option">
+                    <input type="radio" name="q2" value="B">
+                    <span>B) Employer matching contributions</span>
+                  </label>
+                  <label class="quiz-option">
+                    <input type="radio" name="q2" value="C">
+                    <span>C) The ability to choose your own investments</span>
+                  </label>
+                  <label class="quiz-option">
+                    <input type="radio" name="q2" value="D">
+                    <span>D) No early withdrawal penalties</span>
+                  </label>
+                </div>
+                <div class="quiz-explanation" id="explanation-2"></div>
+              </div>
+
+              <div class="quiz-question" id="question-3" style="display: none;">
+                <p class="question-text"><strong>Question 3:</strong> When do you pay taxes with a Roth IRA?</p>
+                <div class="quiz-options">
+                  <label class="quiz-option">
+                    <input type="radio" name="q3" value="A">
+                    <span>A) You pay taxes when you withdraw the money in retirement</span>
+                  </label>
+                  <label class="quiz-option">
+                    <input type="radio" name="q3" value="B">
+                    <span>B) You pay taxes now, but withdrawals in retirement are tax-free</span>
+                  </label>
+                  <label class="quiz-option">
+                    <input type="radio" name="q3" value="C">
+                    <span>C) You never pay any taxes</span>
+                  </label>
+                  <label class="quiz-option">
+                    <input type="radio" name="q3" value="D">
+                    <span>D) You pay taxes twice—now and in retirement</span>
+                  </label>
+                </div>
+                <div class="quiz-explanation" id="explanation-3"></div>
+              </div>
+
+              <div class="quiz-controls">
+                <button class="quiz-btn" id="submit-quiz" onclick="submitQuizAnswer()">Submit Answer</button>
+                <button class="quiz-btn" id="next-question" onclick="nextQuestion()" style="display: none;">Next Question</button>
+                <div class="quiz-score" id="quiz-score"></div>
+              </div>
+            </div>
+          </aside>
+        </div>
+        <nav class="slide-nav">
+          <button
+            class="prev-btn"
+            onclick="changeSlide(-1)"
+            aria-label="Previous slide"
+          >
+            
+          </button>
+          <span class="slide-counter">4/10</span>
+          <button
+            class="next-btn"
+            onclick="changeSlide(1)"
+            aria-label="Next slide"
+          >
+            
+          </button>
+        </nav>
+      </article>
+
+      <!-- Slide 5 -->
+      <article class="slide">
+        <div class="slide-content">
+          <section class="left-panel">
+            <header class="brand-header">
+              <img alt="catapult" src="/public/assets/catapult-with-logo.png" />
+            </header>
+            <h2>401(k) VS Roth IRA</h2>
+            <p>Interactive comparison chart showing long-term growth</p>
+          </section>
+          <aside class="right-panel">
+            <div class="comparison-container">
+              <h2>Starting Early</h2>
+              <p class="scenario"><strong>Scenario:</strong> Alex, age 18, contributes $100/month to a Roth IRA vs same amount to a 401(k).</p>
+
+              <div class="slider-control">
+                <h3>Adjust Monthly Contributions</h3>
+                <input type="range" id="contribution-slider" min="50" max="500" value="350" step="10" class="contribution-slider">
+                <p class="contribution-amount">$<span id="contribution-value">350</span>/month</p>
+              </div>
+
+              <p class="key-lesson"><strong>Key Lesson:</strong> The earlier you start, the more time compounding works in your favor. Even small monthly contributions can grow into hundreds of thousands of dollars by age 67!</p>
+            </div>
+          </aside>
+        </div>
+        <nav class="slide-nav">
+          <button
+            class="prev-btn"
+            onclick="changeSlide(-1)"
+            aria-label="Previous slide"
+          >
+            
+          </button>
+          <span class="slide-counter">5/10</span>
+          <button
+            class="next-btn"
+            onclick="changeSlide(1)"
+            aria-label="Next slide"
+          >
+            
+          </button>
+        </nav>
+      </article>
+
+      <!-- Slide 6 -->
+      <article class="slide">
+        <div class="slide-content">
+          <section class="left-panel">
+            <header class="brand-header">
+              <img alt="catapult" src="/public/assets/catapult-with-logo.png" />
+            </header>
+            <h2>Visual Comparison Chart:</h2>
+            <div class="divider"></div>
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th scope="col">Feature</th>
+                  <th scope="col">401(k)</th>
+                  <th scope="col">Roth IRA</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Who opens it?</th>
+                  <td>Your employer</td>
+                  <td>You</td>
+                </tr>
+                <tr>
+                  <th scope="row">2024 limit</th>
+                  <td>$23,000</td>
+                  <td>$7,000</td>
+                </tr>
+                <tr>
+                  <th scope="row">Tax benefit</th>
+                  <td>Pay later</td>
+                  <td>Pay now, free later</td>
+                </tr>
+                <tr>
+                  <th scope="row">Employer match?</th>
+                  <td>Often YES</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <th scope="row">Flexibility</th>
+                  <td>Locked until 59½</td>
+                  <td>Can access contributions</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <aside class="right-panel">
+            <div class="takeaway-container">
+              <h3>Key Takeaway for Teens:</h3>
+
+              <div class="takeaway-section">
+                <h4>The Power Move:</h4>
+                <p>If you have a job with a 401(k), contribute enough to get the full employer match (that's free money!). Then, if you can save more, open a Roth IRA and max it out. The combination is unbeatable.</p>
+              </div>
+
+              <div class="takeaway-section">
+                <h4>Why start now?</h4>
+                <p>A 16-year-old investing $100/month until retirement will have MORE money than someone who starts at 30 investing $300/month. Time is your superpower.</p>
+              </div>
+            </div>
+          </aside>
+        </div>
+        <nav class="slide-nav">
+          <button
+            class="prev-btn"
+            onclick="changeSlide(-1)"
+            aria-label="Previous slide"
+          >
+            ←
+          </button>
+          <span class="slide-counter">6/10</span>
+          <button
+            class="next-btn"
+            onclick="changeSlide(1)"
+            aria-label="Next slide"
+          >
+            →
+          </button>
+        </nav>
+      </article>
+
+      <!-- Slide 7 -->
+      <article class="slide">
+        <div class="slide-content">
+          <section class="left-panel">
+            <header class="brand-header">
+              <img alt="catapult" src="/public/assets/catapult-with-logo.png" />
+            </header>
+            <h2>Life Happens (Age 25–40)</h2>
+            <div class="divider"></div>
+            <p>By now, Alex has a family and needs protection. Enter: Life Insurance.</p>
+            <p>Life insurance pays money to your loved ones when you pass away.</p>
+          </section>
+          <aside class="right-panel">
+            <figure>
+              <img src="images/family1.svg" alt="Illustration of a family representing the need for life insurance protection" style="width: 100%; max-width: 500px;">
+            </figure>
+          </aside>
+        </div>
+        <nav class="slide-nav">
+          <button
+            class="prev-btn"
+            onclick="changeSlide(-1)"
+            aria-label="Previous slide"
+          >
+            ←
+          </button>
+          <span class="slide-counter">7/10</span>
+          <button
+            class="next-btn"
+            onclick="changeSlide(1)"
+            aria-label="Next slide"
+          >
+            →
+          </button>
+        </nav>
+      </article>
+
+      <!-- Slide 8 -->
+      <article class="slide">
+        <div class="slide-content">
+          <section class="left-panel">
+            <header class="brand-header">
+              <img alt="catapult" src="/public/assets/catapult-with-logo.png" />
+            </header>
+            <h2>Types of Life Insurance</h2>
+            <div class="divider"></div>
+            <ul class="insurance-types">
+              <li><strong>Term Life:</strong> Cheapest, lasts 10–30 years, no cash value.</li>
+              <li><strong>Whole Life:</strong> More expensive, lasts your whole life, builds cash value.</li>
+              <li><strong>Universal Life:</strong> Flexible payments, may grow cash value.</li>
+              <li><strong>Variable Life:</strong> Investment-linked, higher risk.</li>
+            </ul>
+            <p class="interactive">Interactive: Click each type to reveal pros/cons and an example.</p>
+          </section>
+          <aside class="right-panel">
+            <div class="video-container">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube-nocookie.com/embed/yTN5GmyNUAI?si=rADbYObVv9XoANbX"
+                title="Types of life insurance explained"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </aside>
+        </div>
+        <nav class="slide-nav">
+          <button
+            class="prev-btn"
+            onclick="changeSlide(-1)"
+            aria-label="Previous slide"
+          >
+            ←
+          </button>
+          <span class="slide-counter">8/10</span>
+          <button
+            class="next-btn"
+            onclick="changeSlide(1)"
+            aria-label="Next slide"
+          >
+            →
+          </button>
+        </nav>
+      </article>
+
+      <!-- Slide 9 -->
+      <article class="slide">
+        <div class="slide-content">
+          <section class="left-panel">
+            <header class="brand-header">
+              <img alt="catapult" src="/public/assets/catapult-with-logo.png" />
+            </header>
+            <h2>Putting It Together</h2>
+            <div class="divider"></div>
+            <p><strong>Two Alex timelines at Age 67:</strong></p>
+            <ul class="timeline-comparison">
+              <li><strong>Alex who invested early (Roth/401k) + had life insurance:</strong> Secure retirement, protected family.</li>
+              <li><strong>Alex who delayed both:</strong> Lower retirement savings, no insurance coverage.</li>
+            </ul>
+            <p class="interactive">Interactive element will go here</p>
+          </section>
+          <aside class="right-panel">
+            <!-- Add your image or content -->
+          </aside>
+        </div>
+        <nav class="slide-nav">
+          <button
+            class="prev-btn"
+            onclick="changeSlide(-1)"
+            aria-label="Previous slide"
+          >
+            ←
+          </button>
+          <span class="slide-counter">9/10</span>
+          <button
+            class="next-btn"
+            onclick="changeSlide(1)"
+            aria-label="Next slide"
+          >
+            →
+          </button>
+        </nav>
+      </article>
+
+      <!-- Slide 10 -->
+      <article class="slide">
+        <div class="slide-content">
+          <section class="left-panel">
+            <header class="brand-header">
+              <img alt="catapult" src="/public/assets/catapult-with-logo.png" />
+            </header>
+            <h2>Accredited Resources</h2>
+            <div class="divider"></div>
+            <ul class="resources-list">
+              <li><a href="https://www.investor.gov" target="_blank" rel="noopener noreferrer">Investor.gov — 401(k) Plans</a></li>
+              <li><a href="https://www.irs.gov/retirement-plans" target="_blank" rel="noopener noreferrer">IRS.gov — Retirement Plans</a></li>
+              <li><a href="https://www.finra.org/investors/learn-to-invest/types-investments/retirement/roth-ira" target="_blank" rel="noopener noreferrer">FINRA — Roth IRA Basics</a></li>
+              <li><a href="https://www.nerdwallet.com/best/financial-advisors/life-insurance" target="_blank" rel="noopener noreferrer">NerdWallet — Life Insurance Guide</a></li>
+              <li><a href="https://www.policygenius.com/life-insurance/" target="_blank" rel="noopener noreferrer">PolicyGenius — Life Insurance Types</a></li>
+            </ul>
+          </section>
+          <aside class="right-panel">
+            <!-- Add your image or content -->
+          </aside>
+        </div>
+        <nav class="slide-nav">
+          <button
+            class="prev-btn"
+            onclick="changeSlide(-1)"
+            aria-label="Previous slide"
+          >
+            ←
+          </button>
+          <span class="slide-counter">10/10</span>
+        </nav>
+      </article>
+    </main>
+
+    <script src="slides.js"></script>
+    <script
+      src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.1/dist/dotlottie-wc.js"
+      type="module"
+    ></script>
+  </body>
+</html>

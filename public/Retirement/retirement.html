@@ -2,172 +2,226 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Future You: Retirement & Protection Timeline</title>
-    <link rel="stylesheet" href="retirement.css">
+  <link rel="stylesheet" href="retirement.css">
 </head>
 <body>
 
-  <div class="slide">
-    <h1>Future You: Retirement & Protection Timeline</h1>
-    <p>The choices you make today affect how secure you’ll be tomorrow.</p>
-    <p>In this module we will go over the most popular retirement investment retirement-plans and Life insurrance options.</p>
-  </div>
-
-  <div class="slide">
-    <h2>What is a 401(k)?</h2>
-    <p>A 401(k) is a retirement savings plan offered by employers. You put money in, it grows over time.</p>
-    <div class="pros-cons">
-      <div class="pros">
-        <h3>Pros</h3>
-        <ul>
-          <li>Tax advantages (traditional = pay tax later, Roth = tax-free withdrawals)</li>
-          <li>Often includes employer match (free money!)</li>
-          <li>High contribution limits</li>
-        </ul>
-      </div>
-      <div class="cons">
-        <h3>Cons</h3>
-        <ul>
-          <li>Limited investment choices (based on employer plan)</li>
-          <li>Money locked until retirement (penalties for early withdrawal)</li>
-        </ul>
-      </div>
-    </div>
-    <p class="interactive">Interactive: Drag pros/cons into the correct column.</p>
-  </div>
-
-  <div class="slide">
-    <h2>What is a Roth IRA?</h2>
-    <p>A Roth IRA is an individual retirement account you open yourself. You pay taxes now, but future withdrawals are tax-free.</p>
-    <div class="pros-cons">
-      <div class="pros">
-        <h3>Pros</h3>
-        <ul>
-          <li>Tax-free growth and withdrawals</li>
-          <li>Flexible investment choices</li>
-          <li>No required withdrawals (RMDs)</li>
-        </ul>
-      </div>
-      <div class="cons">
-        <h3>Cons</h3>
-        <ul>
-          <li>Lower contribution limits than 401(k)</li>
-          <li>Income restrictions (not everyone can contribute)</li>
-        </ul>
-      </div>
-    </div>
-    <p class="interactive">Interactive: Match the pro/con cards to Roth IRA vs 401(k).</p>
-  </div>
-
-  <div class="slide">
-    <h2>Side-by-Side — Roth IRA vs 401(k)</h2>
-    <table>
-      <tr>
-        <th>Feature</th>
-        <th>401(k)</th>
-        <th>Roth IRA</th>
-      </tr>
-      <tr>
-        <td>When taxed</td>
-        <td>Later (traditional)</td>
-        <td>Now (withdrawals tax-free)</td>
-      </tr>
-      <tr>
-        <td>Contribution limits (2024)</td>
-        <td>$23,000+</td>
-        <td>$7,000</td>
-      </tr>
-      <tr>
-        <td>Provider</td>
-        <td>Employer</td>
-        <td>You open it yourself</td>
-      </tr>
-    </table>
-    <p class="interactive">Interactive: Click which plan you’d start first if you had both options.</p>
-  </div>
-
-  <div class="slide">
-    <h2>Roth IRA vs 401(k) - Comparison Video</h2>
-    <p class="interactive">Interactive: Roth IRA vs 401k video.</p>
-  
-    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/5MppmjJ-HNk?si=bYlyzzagDFNpQkqi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-
-  <div class="slide">
-    <h2>Timeline — Starting Early</h2>
-    <p>Scenario: Alex, age 18, contributes $100/month to a Roth IRA vs same amount to a 401(k).</p>
-    <p class="interactive">Interactive: Move the slider to adjust monthly savings and see how the balance grows by age 67.</p>
-  
-    <img src="images/rothvs401_wire.png" style="width: 80%;">
-
-</div>
-
-  <div class="slide">
-    <h2>Life Happens (Age 25–40)</h2>
-    <p>By now, Alex has a family and needs protection. Enter: Life Insurance.</p>
-    <p>Life insurance pays money to your loved ones when you pass away.</p>
+  <!-- IF YOU SEE "aria-lablledby" IT IS FOR WEB ACESSABILITY (It's for describing content) -->
+  <main id="presentation">
     
-    <img src="images/family1.svg" style="width: 80%;">
-    </div>
+    <!-- Slide 1 -->
+    <section class="slide" id="intro" aria-labelledby="intro-heading">
+      <h1 id="intro-heading">Future You: Retirement & Protection Timeline</h1>
+      <p>The choices you make today affect how secure you'll be tomorrow.</p>
+      <p>In this module we will go over the most popular retirement investment plans and life insurance options.</p>
+      <dotlottie-wc src="https://lottie.host/696669f3-1a22-4b18-b47b-a24e7f88fc31/o5HmsI14nh.lottie" style="width: 300px;height: 300px" autoplay loop></dotlottie-wc>
+    </section>
 
-  <div class="slide">
-    <h2>Types of Life Insurance</h2>
-    <ul>
-      <li><b>Term Life:</b> Cheapest, lasts 10–30 years, no cash value.</li>
-      <li><b>Whole Life:</b> More expensive, lasts your whole life, builds cash value.</li>
-      <li><b>Universal Life:</b> Flexible payments, may grow cash value.</li>
-      <li><b>Variable Life:</b> Investment-linked, higher risk.</li>
-    </ul>
-    <p class="interactive">Interactive: Click each type to reveal pros/cons and an example.</p>
-    <p>There needs to be pro's and con's for each one. When the element is clicked it needs to trigger a dropped down </p>
-</div>
+    <!-- Slide 2 -->
+    <section class="slide" id="what-is-401k" aria-labelledby="401k-heading">
+      <h2 id="401k-heading">What is a 401(k)?</h2>
+      <p>A 401(k) is a retirement savings plan offered by employers. You put money in, it grows over time.</p>
+      
+      <div class="pros-cons">
+        <article class="pros">
+          <h3>Pros</h3>
+          <ul>
+            <li class = "list" draggable="true"><img src="images/drag_drop_icon.png" alt="">Tax advantages (traditional = pay tax later, Roth = tax-free withdrawals)</li>
+            <li class = "list" draggable="true"><img src="images/drag_drop_icon.png" alt="">Often includes employer match (free money!)</li>
+            <li class = "list" draggable="true"><img src="images/drag_drop_icon.png" alt="">High contribution limits</li>
+          </ul>
+        </article>
+        
+        <article class="cons">
+          <h3>Cons</h3>
+          <ul>
+            <li class = "list" draggable="true"><img src="images/drag_drop_icon.png">Limited investment choices (based on employer plan)</li>
+            <li class = "list" draggable="true"><img src="images/drag_drop_icon.png">Money locked until retirement (penalties for early withdrawal)</li>
+          </ul>
+        </article>
+      </div>
+      <p class="interactive">Interactive: Drag pros/cons into the correct column.</p>
+    </section>
+    
+    
+    <!-- Slide 3 -->
+    <section class="slide" id="what-is-roth-ira" aria-labelledby="roth-heading">
+      <h2 id="roth-heading">What is a Roth IRA?</h2>
+      <p>A Roth IRA is an individual retirement account you open yourself. You pay taxes now, but future withdrawals are tax-free.</p>
+      
+      <div class="pros-cons">
+        <article class="pros">
+          <h3>Pros</h3>
+          <ul>
+            <li>Tax-free growth and withdrawals</li>
+            <li>Flexible investment choices</li>
+            <li>No required withdrawals (RMDs)</li>
+          </ul>
+        </article>
+        
+        <article class="cons">
+          <h3>Cons</h3>
+          <ul>
+            <li>Lower contribution limits than 401(k)</li>
+            <li>Income restrictions (not everyone can contribute)</li>
+          </ul>
+        </article>
+      </div>
+      <p class="interactive">Interactive: Match the pro/con cards to Roth IRA vs 401(k).</p>
+    </section>
+
+    <!-- Slide 4 -->
+    <section class="slide" id="comparison" aria-labelledby="comparison-heading">
+      <h2 id="comparison-heading">Side-by-Side — Roth IRA vs 401(k)</h2>
+      <table>
+        <caption class="sr-only">Comparison of 401(k) and Roth IRA features</caption>
+        <thead>
+          <tr>
+            <th scope="col">Feature</th>
+            <th scope="col">401(k)</th>
+            <th scope="col">Roth IRA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">When taxed</th>
+            <td>Later (traditional)</td>
+            <td>Now (withdrawals tax-free)</td>
+          </tr>
+          <tr>
+            <th scope="row">Contribution limits (2024)</th>
+            <td>$23,000+</td>
+            <td>$7,000</td>
+          </tr>
+          <tr>
+            <th scope="row">Provider</th>
+            <td>Employer</td>
+            <td>You open it yourself</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="interactive">Interactive: Click which plan you'd start first if you had both options.</p>
+    </section>
+
+    <!-- Slide 5 -->
+    <section class="slide" id="comparison-video" aria-labelledby="video-heading">
+      <h2 id="video-heading">Roth IRA vs 401(k) — Comparison Video</h2>
+      <p class="interactive">Interactive: Roth IRA vs 401k video.</p>
+      
+      <div class="video-container">
+        <iframe 
+          width="560" 
+          height="315" 
+          src="https://www.youtube-nocookie.com/embed/5MppmjJ-HNk?si=bYlyzzagDFNpQkqi" 
+          title="Roth IRA vs 401(k) comparison video" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <!-- Slide 6 -->
+    <section class="slide" id="timeline-early" aria-labelledby="timeline-heading">
+      <h2 id="timeline-heading">Timeline — Starting Early</h2>
+      <p>Scenario: Alex, age 18, contributes $100/month to a Roth IRA vs same amount to a 401(k).</p>
+      <p class="interactive">Interactive: Move the slider to adjust monthly savings and see how the balance grows by age 67.</p>
+      
+      <figure>
+        <img src="images/rothvs401_wire.png" alt="Comparison chart showing growth of Roth IRA vs 401(k) over time from age 18 to 67" style="width: 80%;">
+      </figure>
+    </section>
+
+    <!-- Slide 7 -->
+    <section class="slide" id="life-happens" aria-labelledby="life-heading">
+      <h2 id="life-heading">Life Happens (Age 25–40)</h2>
+      <p>By now, Alex has a family and needs protection. Enter: Life Insurance.</p>
+      <p>Life insurance pays money to your loved ones when you pass away.</p>
+      
+      <figure>
+        <img src="images/family1.svg" alt="Illustration of a family representing the need for life insurance protection" style="width: 80%;">
+      </figure>
+    </section>
 
 
- <div class="slide">
-    <h2>Types of Life Insurance</h2>
-    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/yTN5GmyNUAI?si=rADbYObVv9XoANbX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <p class ="interactive">Interactive: Have a two question quiz on the video</p>
-</div>
+    <!-- Slide 8 -->
+    <section class="slide" id="insurance-types" aria-labelledby="types-heading">
+      <h2 id="types-heading">Types of Life Insurance</h2>
+      <ul>
+        <li><strong>Term Life:</strong> Cheapest, lasts 10–30 years, no cash value.</li>
+        <li><strong>Whole Life:</strong> More expensive, lasts your whole life, builds cash value.</li>
+        <li><strong>Universal Life:</strong> Flexible payments, may grow cash value.</li>
+        <li><strong>Variable Life:</strong> Investment-linked, higher risk.</li>
+      </ul>
+      <p class="interactive">Interactive: Click each type to reveal pros/cons and an example.</p>
+      <p>There needs to be pro's and con's for each one. When the element is clicked it needs to trigger a dropdown.</p>
+    </section>
+
+    <section class="slide" id="insurance-video" aria-labelledby="insurance-video-heading">
+      <h2 id="insurance-video-heading">Types of Life Insurance</h2>
+      <div class="video-container">
+        <iframe 
+          width="560" 
+          height="315" 
+          src="https://www.youtube-nocookie.com/embed/yTN5GmyNUAI?si=rADbYObVv9XoANbX" 
+          title="Types of life insurance explained" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="interactive">Interactive: Have a two question quiz on the video</p>
+    </section>
+
+    <section class="slide" id="age-matching" aria-labelledby="age-heading">
+      <h2 id="age-heading">Which Insurance at Which Age?</h2>
+      <p class="interactive">
+        • At 22 with no dependents, should Alex buy life insurance? (Optional, but cheaper now).<br>
+        • At 30 with a family, which policy is most affordable? (Term).<br>
+        • At 50+, which policy is common? (Whole/Universal).
+      </p>
+    </section>
+
+    <section class="slide" id="putting-together" aria-labelledby="together-heading">
+      <h2 id="together-heading">Putting It Together</h2>
+      <p>Two Alex timelines at Age 67:</p>
+      <ul>
+        <li><strong>Alex who invested early (Roth/401k) + had life insurance:</strong> Secure retirement, protected family.</li>
+        <li><strong>Alex who delayed both:</strong> Lower retirement savings, no insurance coverage.</li>
+      </ul>
+      <p class = 'interactive'>Interactive element will go here </p>
+    </section>
+
+    <section class="slide" id="quiz" aria-labelledby="quiz-heading">
+      <h2 id="quiz-heading">Quiz & Reflection</h2>
+      <ol>
+        <li>Which plan has higher contribution limits: Roth IRA or 401k?</li>
+        <li>Which insurance type is cheapest for young adults?</li>
+        <li>When do Roth IRA withdrawals become tax-free?</li>
+      </ol>
+      <p class="interactive">Reflection: What's one financial goal you want to start today?</p>
+    </section>
+
+    <section class="slide" id="resources" aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Accredited Resources</h2>
+      <ul>
+        <li><a href="https://www.investor.gov" target="_blank" rel="noopener noreferrer">Investor.gov — 401(k) Plans</a></li>
+        <li><a href="https://www.irs.gov/retirement-plans" target="_blank" rel="noopener noreferrer">IRS.gov — Retirement Plans</a></li>
+        <li><a href="https://www.finra.org/investors/learn-to-invest/types-investments/retirement/roth-ira" target="_blank" rel="noopener noreferrer">FINRA — Roth IRA Basics</a></li>
+        <li><a href="https://www.nerdwallet.com/best/financial-advisors/life-insurance" target="_blank" rel="noopener noreferrer">NerdWallet — Life Insurance Guide</a></li>
+        <li><a href="https://www.policygenius.com/life-insurance/" target="_blank" rel="noopener noreferrer">PolicyGenius — Life Insurance Types</a></li>
+      </ul>
+    </section>
 
 
-  <div class="slide">
-    <h2>Which Insurance at Which Age?</h2>
-    <p class="interactive">
-      • At 22 with no dependents, should Alex buy life insurance? (Optional, but cheaper now).<br>
-      • At 30 with a family, which policy is most affordable? (Term).<br>
-      • At 50+, which policy is common? (Whole/Universal).
-    </p>
-  </div>
+  </main>
 
-  <div class="slide">
-    <h2>Putting It Together</h2>
-    <p>Two Alex timelines at Age 67:</p>
-    <ul>
-      <li><b>Alex who invested early (Roth/401k) + had life insurance:</b> Secure retirement, protected family.</li>
-      <li><b>Alex who delayed both:</b> Lower retirement savings, no insurance coverage.</li>
-    </ul>
-  </div>
-
-  <div class="slide">
-    <h2>Quiz & Reflection</h2>
-    <ol>
-      <li>Which plan has higher contribution limits: Roth IRA or 401k?</li>
-      <li>Which insurance type is cheapest for young adults?</li>
-      <li>When do Roth IRA withdrawals become tax-free?</li>
-    </ol>
-    <p class="interactive">Reflection: What’s one financial goal you want to start today?</p>
-  </div>
-
-  <div class="slide">
-    <h2>Accredited Resources</h2>
-    <ul>
-      <li><a href="https://www.investor.gov" target="_blank">Investor.gov — 401(k) Plans</a></li>
-      <li><a href="https://www.irs.gov/retirement-plans" target="_blank">IRS.gov — Retirement Plans</a></li>
-      <li><a href="https://www.finra.org/investors/learn-to-invest/types-investments/retirement/roth-ira" target="_blank">FINRA — Roth IRA Basics</a></li>
-      <li><a href="https://www.nerdwallet.com/best/financial-advisors/life-insurance" target="_blank">NerdWallet — Life Insurance Guide</a></li>
-      <li><a href="https://www.policygenius.com/life-insurance/" target="_blank">PolicyGenius — Life Insurance Types</a></li>
-    </ul>
-  </div>
+  <script src="retirement.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.1/dist/dotlottie-wc.js" type="module"></script>
 
 </body>
 </html>
