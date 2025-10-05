@@ -1,0 +1,404 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Dosis", sans-serif;
+}
+
+.dashboard-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+}
+
+#logo-container {
+    width: 20%;
+    min-width: 100px;
+    padding: 20px;
+    padding-left: 20px;
+}
+
+#logo-container img {
+    max-width: 100%;
+}
+
+
+#link-container {
+    padding-right: 30px;
+    font-size: 2.6vw;
+}
+
+#dashboard-link {
+    color: #003D20;
+    text-decoration: none;
+    padding-right: 20px;
+    font-family: "Dosis", sans-serif;
+}
+
+#dashboard-link a:visited,
+#dashboard-link a:active {
+    color: #003D20;
+    text-decoration: none;
+}
+
+#dashboard-link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#logout {
+    color: #b31717;
+    text-decoration: none;
+    font-family: "Dosis", sans-serif;
+}
+
+#logout a:visited,
+#logout a:active {
+    color: #003D20;
+    text-decoration: none;
+}
+
+#logout:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#start-learning {
+    font-size: 50px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.course-content {
+    background-color: #0172505a;
+    width: 60%;
+    padding: 20px;
+    border-radius: 10px;
+    margin: auto;
+    box-shadow: 0 0 15px #003D2B;
+}
+
+.lesson-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 30px;
+}
+
+.lesson-div {
+    max-height: 45px;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    padding: 20px;
+    box-shadow: 0px 5px 5px 0px #003d2b3f;
+}
+
+.lesson-title {
+    width: fit-content;
+}
+
+.arrow {
+    width: fit-content;
+    transition: 0.5s;
+}
+
+.arrow:hover {
+    cursor: pointer;
+}
+
+.lesson-content {
+    background-color: white;
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+    flex-shrink: 0;
+    padding: 30px;
+}
+
+.content-hide {
+    font-size: 20px;
+    width: fit-content;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.content-hide:hover {
+    cursor: pointer;
+}
+
+/* The following is styling for Lesson 1: Smart Spending Habits */
+
+
+.lesson-content__ssh {
+    padding: 0;
+    margin: auto;
+    margin-top: 50px;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.title {
+    text-shadow: 2px 2px #d2e47d;
+}
+
+.text {
+    width: 67%;
+    line-height: 30px;
+
+}
+
+.container {
+    position: relative;
+    /* makes overlay position relative to container */
+    width: 60%;
+    padding: 2rem;
+    border: 1px solid #ccc;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #003D2B;
+}
+
+/* Overlay that covers ONLY the container */
+.container .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    z-index: 10;
+}
+
+/* Optional blur effect */
+.container .overlay {
+    backdrop-filter: blur(5px);
+}
+
+.container .overlay p {
+    background-color: black;
+    border-radius: 10px 20px;
+    padding: 10px;
+    color: aliceblue;
+
+}
+
+.container .overlay p:hover {
+    background-color: #003D2B;
+}
+
+/* Hidden state */
+.container .overlay.hidden {
+    display: none;
+}
+
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn {
+    background-color: #003D2B;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    outline: none;
+}
+
+.btn:hover {
+    border-color: #d2e47d;
+}
+
+.closing {
+    position: relative;
+    max-width: 100%;
+    height: 300px;
+    background: #003d20;
+    color: white;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+    /* space for text */
+    overflow: hidden;
+}
+
+/* wave containers */
+.curve {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    /* same height as svg */
+    overflow: hidden;
+    line-height: 0;
+}
+
+/* top wave */
+.curve.top {
+    top: 0;
+    transform: rotate(180deg);
+    /* flips wave to make it top edge */
+}
+
+/* bottom wave */
+.curve.bottom {
+    bottom: 0;
+}
+
+/* make svg fill container */
+.curve svg {
+    position: relative;
+    display: block;
+    width: calc(133% + 1.3px);
+    height: 150px;
+}
+
+.shape-fill {
+    fill: #ffffff;
+    /* color of wave */
+}
+
+/* text */
+.htext {
+    position: relative;
+    /* ensures it's above the waves */
+    z-index: 2;
+    /* controls stacking order*/
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2 rem;
+    line-height: 1.6;
+}
+
+
+
+/* The following is styling for Lesson 2: Taxes */
+
+.tax-lesson {
+    font-size: 24px;
+}
+
+.tax-lesson button {
+    font-size: 30px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    background-color: #003D2B;
+    padding: 5px 20px 5px;
+    color: white;
+}
+
+#article-header {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.text-section {
+    margin-top: 50px;
+}
+
+.quiz-header {
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.question {
+    padding-top: 30px;
+}
+
+#result {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .course-content {
+        width: 85%;
+    }
+
+    .container {
+        width: 300px;
+    }
+
+    #link-container {
+        padding-right: 30px;
+        font-size: 4vw;
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+
+    #start-learning {
+        font-size: 35px;
+    }
+
+    .lesson-div {
+        padding: 10px;
+    }
+
+    .lesson-header {
+        font-size: 20px;
+    }
+
+    .container {
+        width: 200px;
+    }
+
+    .htext {
+        margin-top: 80px;
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+
+    .tax-lesson {
+        padding-right: 20px;
+        font-size: 14px;
+    }
+
+    .tax-lesson button {
+        font-size: 20px;
+        margin-top: 25px;
+    }
+
+    #article-header {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .quiz-header {
+        margin-top: 30px;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .question {
+        padding-top: 30px;
+    }
+
+    #result {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+    }
+}
