@@ -1,14 +1,22 @@
-require('dotenv').config(); // Prevent race conditions 
-const express = require('express');
-const cors = require('cors');
-const bcrypt = require('bcrypt'); // What is this for entirely
-const mysql = require('mysql2');
+const mysql = require('mysql2/promise');
+const fs = require('fs');
 const path = require('path');
+require('dotenv').config();
 
-const app = express();
-app.use(cors());              // allow your static site / dev ports
-app.use(express.json());      // parse JSON
-app.use(express.static('public')); // serves index.html, styles.css, script.js
+const pool = mysql.createPool({
+  host: process.env.DB_HOST,
+  port: Number(process.env.DB_PORT || 3306),
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  ssl: {
+    ca: fs.readFileSync(path.join(__dirname, 'certs', 'global-bundle.pem'), 'utf8'),
+  },
+  waitForConnections: true,
+  connectionLimit: 10,
+});
+
+module.exports = pool;
 
 
 
@@ -33,5 +41,20 @@ connection
     console.log(rows);
   })
 
+//     try {
+//       const res = await fetch('/api/users', {
+//         method: 'POST',
+//         headers: { 'Content-Type': 'application/json' },
+//         body: JSON.stringify(payload),
+//       });
+//       const data = await res.json();
+//       if (!res.ok) throw new Error(data?.error || 'Signup failed.');
 
-module.exports = connection;
+//       form.reset();
+//       alert('Account created successfully!');
+//     } catch (err) {
+//       showError(err.message);
+//     } finally {
+//       joinBtn.disabled = false;
+//     }
+// });
