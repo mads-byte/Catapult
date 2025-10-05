@@ -19,24 +19,48 @@
     max-width: 100%;
 }
 
-#logout-container {
-    font-family: "Dosis", sans-serif;
-    color: rgb(191, 20, 20);
-    font-size: 30px;
-    padding-left: 20px;
+
+#link-container {
+    padding-right: 30px;
 }
 
-#logout-container:hover {
+#dashboard-link {
+    color: #003D20;
+    text-decoration: none;
+    padding-right: 20px;
+    font-size: 40px;
+    font-family: "Dosis", sans-serif;
+}
+
+#dashboard-link a:visited,
+#dashboard-link a:active {
+    color: #003D20;
+    text-decoration: none;
+}
+
+#dashboard-link:hover {
     text-decoration: underline;
     cursor: pointer;
 }
 
-#logout-container a,
-#logout-container a:visited,
-#logout-container a:active {
-    color: rgb(191, 20, 20);
+#logout {
+    color: #b31717;
+    text-decoration: none;
+    font-size: 40px;
+    font-family: "Dosis", sans-serif;
+}
+
+#logout a:visited,
+#logout a:active {
+    color: #003D20;
     text-decoration: none;
 }
+
+#logout:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 
 .course-content {
     background-color: #D2E47D;
@@ -46,29 +70,28 @@
     margin: auto;
 }
 
-
 .lesson-header {
     display: flex;
     justify-content: space-between;
     font-size: 35px;
 }
 
-#lesson-div {
-    max-height: 40px;
+.lesson-div {
+    max-height: 45px;
     overflow: hidden;
-    transition: 0.5s;
+    transition: all 0.5s ease-in-out;
 }
 
 .lesson-title {
     width: fit-content;
 }
 
-#arrow {
+.arrow {
     width: fit-content;
     transition: 0.5s;
 }
 
-#arrow:hover {
+.arrow:hover {
     cursor: pointer;
 }
 
@@ -77,16 +100,17 @@
     height: fit-content;
     width: 90%;
     margin: auto;
+    margin-top: 30px;
     flex-shrink: 0;
     padding: 30px;
 }
 
-#content-hide {
+.content-hide {
     background-color: aqua;
     width: fit-content;
     margin: auto;
 }
 
-#content-hide:hover {
+.content-hide:hover {
     cursor: pointer;
 }

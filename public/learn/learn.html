@@ -14,13 +14,15 @@
 <body>
     <header class="dashboard-header">
         <div id="logo-container"><img src="../assets/catapult-with-logo.png"></div>
-        <div id="logout-container"><a href="../index.html">Log Out</a></div>
+        <div id="link-container"><a id="dashboard-link" href="../dashboard/dashboard.html">Back to Dashboard</a> <a
+                id="logout" href="../index.html">Log Out</a>
+        </div>
     </header>
     <div class="course-content">
-        <div id="lesson-div">
+        <div id="lesson-div2" class="lesson-div">
             <div class="lesson-header">
                 <div class="lesson-title">Lesson 2: Taxes</div>
-                <div id="arrow"><i class="fa-solid fa-sort-down"></i></div>
+                <div id="arrow2" class="arrow"><i class="fa-solid fa-sort-down"></i></div>
             </div>
             <div class="lesson-content">
                 <div class="tax-lesson">
@@ -81,7 +83,74 @@
                             taxes from their own income and doing so accurately. If you're thinking about starting a
                             business
                             or selling a product, it is best to seek out tax advice from a trained professional.
-                            <div id="content-hide"><i class='fa-solid fa-caret-up'></i> Hide Lesson</div>
+
+                            <div>Review Quiz</div>
+                            <form id="tax-quiz">
+                                <div class="question">
+                                    <p>1. True or False: Paying taxes is optional</p>
+                                    <input type="radio" id="answer-true" name="question1" value="incorrect">
+                                    <label for="answer-true">True</label><br>
+                                    <input type="radio" id="answer-false" name="question1" value="correct">
+                                    <label for="answer-false">False</label><br>
+                                </div>
+                                <div class="question">
+                                    <p>2. True or False: Sales tax is the same in every state</p>
+                                    <input type="radio" id="answer-true2" name="question2" value="incorrect">
+                                    <label for="answer-true2">True</label><br>
+                                    <input type="radio" id="answer-false2" name="question2" value="correct">
+                                    <label for="answer-false2">False</label><br>
+                                </div>
+                                <div class="question">
+                                    <p>3. What is income tax?</p>
+                                    <input type="radio" id="answer1" name="question3" value="incorrect">
+                                    <label for="answer1">A tax only paid when buying expensive items</label><br>
+                                    <input type="radio" id="answer2" name="question3" value="incorrect">
+                                    <label for="answer2">A fee employers pay instead of their employees</label><br>
+                                    <input type="radio" id="answer3" name="question3" value="correct">
+                                    <label for="answer3">A percentage of money earned that individuals must pay to the
+                                        government</label><br>
+                                    <input type="radio" id="answer4" name="question3" value="incorrect">
+                                    <label for="answer4">A type of tax that only applies to people who own
+                                        businesses</label><br>
+                                </div>
+                                <div class="question">
+                                    <p>4. What determines how much income tax a person owes?</p>
+                                    <input type="radio" id="answer1b" name="question4" value="incorrect">
+                                    <label for="answer1b">The number of items they buy</label><br>
+                                    <input type="radio" id="answer2b" name="question4" value="incorrect">
+                                    <label for="answer2b">Their spending habits</label><br>
+                                    <input type="radio" id="answer3b" name="question4" value="correct">
+                                    <label for="answer3b">Their income and tax bracket</label><br>
+                                    <input type="radio" id="answer4b" name="question4" value="incorrect">
+                                    <label for="answer4b">The state they live in only</label><br>
+                                </div>
+                                <div class="question">
+                                    <p>5. What is the purpose of the W-4 form that new employees fill out?</p>
+                                    <input type="radio" id="answer1c" name="question5" value="incorrect">
+                                    <label for="answer1c">To report yearly income</label><br>
+                                    <input type="radio" id="answer2c" name="question5" value="correct">
+                                    <label for="answer2c">To calculate how much tax to withhold from their
+                                        paycheck</label><br>
+                                    <input type="radio" id="answer3c" name="question5" value="incorrect">
+                                    <label for="answer3c">To request a tax refund</label><br>
+                                    <input type="radio" id="answer4c" name="question5" value="incorrect">
+                                    <label for="answer4c">To declare self-employment status</label><br>
+                                </div>
+                                <div class="question">
+                                    <p>6. Who is responsible for calculating and withholding their own taxes?</p>
+                                    <input type="radio" id="answer1d" name="question6" value="incorrect">
+                                    <label for="answer1d">All employees working for a company</label><br>
+                                    <input type="radio" id="answer2d" name="question6" value="correct">
+                                    <label for="answer2d">Independent contractors and business owners</label><br>
+                                    <input type="radio" id="answer3d" name="question6" value="incorrect">
+                                    <label for="answer3d">High-income earners only</label><br>
+                                    <input type="radio" id="answer4d" name="question6" value="incorrect">
+                                    <label for="answer4d">Students working part-time</label><br>
+                                    <button id="submit" type="submit">Submit</button>
+                                </div>
+                            </form>
+                            <div id="content-hide2" class="content-hide"><i class='fa-solid fa-caret-up'></i> Hide
+                                Lesson</div>
                         </div>
 
                     </div>
@@ -89,7 +158,6 @@
                 </div>
 
             </div>
-            <p id="test"></p>
         </div>
     </div>
     <script src="https://kit.fontawesome.com/3cc749efd0.js" crossorigin="anonymous"></script>
