@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: "Dosis", sans-serif;
 }
 
 .dashboard-header {
@@ -24,13 +25,13 @@
 
 #link-container {
     padding-right: 30px;
+    font-size: 2.8vw;
 }
 
 #dashboard-link {
     color: #003D20;
     text-decoration: none;
     padding-right: 20px;
-    font-size: 40px;
     font-family: "Dosis", sans-serif;
 }
 
@@ -48,7 +49,6 @@
 #logout {
     color: #b31717;
     text-decoration: none;
-    font-size: 40px;
     font-family: "Dosis", sans-serif;
 }
 
@@ -108,11 +108,186 @@
 }
 
 .content-hide {
-    background-color: aqua;
+    font-size: 20px;
     width: fit-content;
     margin: auto;
 }
 
 .content-hide:hover {
     cursor: pointer;
+}
+
+/* The following is styling for Lesson 1: Smart Spending Habits */
+
+
+.lesson-content__ssh {
+    padding: 0;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.title {
+    text-shadow: 2px 2px #d2e47d;
+}
+
+.text {
+    width: 67%;
+    line-height: 30px;
+
+}
+
+.container {
+    position: relative;
+    /* makes overlay position relative to container */
+    width: 60%;
+    padding: 2rem;
+    border: 1px solid #ccc;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #003D2B;
+}
+
+/* Overlay that covers ONLY the container */
+.container .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    z-index: 10;
+}
+
+/* Optional blur effect */
+.container .overlay {
+    backdrop-filter: blur(5px);
+}
+
+.container .overlay p {
+    background-color: black;
+    border-radius: 10px 20px;
+    padding: 10px;
+    color: aliceblue;
+
+}
+
+.container .overlay p:hover {
+    background-color: #003D2B;
+}
+
+/* Hidden state */
+.container .overlay.hidden {
+    display: none;
+}
+
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn {
+    background-color: #003D2B;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    outline: none;
+}
+
+.btn:hover {
+    border-color: #d2e47d;
+}
+
+.closing {
+    position: relative;
+    max-width: 100%;
+    height: 300px;
+    background: #003d20;
+    color: white;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+    /* space for text */
+    overflow: hidden;
+}
+
+/* wave containers */
+.curve {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    /* same height as svg */
+    overflow: hidden;
+    line-height: 0;
+}
+
+/* top wave */
+.curve.top {
+    top: 0;
+    transform: rotate(180deg);
+    /* flips wave to make it top edge */
+}
+
+/* bottom wave */
+.curve.bottom {
+    bottom: 0;
+}
+
+/* make svg fill container */
+.curve svg {
+    position: relative;
+    display: block;
+    width: calc(133% + 1.3px);
+    height: 150px;
+}
+
+.shape-fill {
+    fill: #ffffff;
+    /* color of wave */
+}
+
+/* text */
+.htext {
+    position: relative;
+    /* ensures it's above the waves */
+    z-index: 2;
+    /* controls stacking order*/
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2 rem;
+    line-height: 1.6;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 300px;
+    }
+
+    #link-container {
+        padding-right: 30px;
+        font-size: 4vw;
+    }
+
+}
+
+@media screen and (max-width: 425px) {
+    .container {
+        width: 200px;
+    }
 }
