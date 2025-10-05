@@ -1,37 +1,50 @@
-require('dotenv').config(); // Prevent race conditions 
-const express = require('express');
-const cors = require('cors');
-const bcrypt = require('bcrypt'); // What is this for entirely
-const mysql = require('mysql2');
+// db.js
+const mysql = require('mysql2/promise');
+const fs = require('fs');
 const path = require('path');
+require('dotenv').config();
 
-const app = express();
-app.use(cors());              // allow your static site / dev ports
-app.use(express.json());      // parse JSON
-app.use(express.static('public')); // serves index.html, styles.css, script.js
-
-
-
-// Connection db
-const connection = mysql.createConnection({
-  host: 'localhost',
-  port: 3306,
-  user: 'root',
-  password: 'password',
-  database: 'HOPE Hacks Database',
+const pool = mysql.createPool({
+  host: process.env.DB_HOST,
+  port: Number(process.env.DB_PORT || 3306),
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  ssl: {
+    ca: fs.readFileSync(path.join(__dirname, 'certs', 'global-bundle.pem'), 'utf8'),
+  },
+  waitForConnections: true,
+  connectionLimit: 10,
 });
 
-connection.connect(err => {
-    if (err) throw err;
-    console.log('Connected to MySql')
-});
-
-connection
-.promise()
-.query('SELECT * FROM user_profiles')
-.then(([rows]) => {
-    console.log(rows);
-})
+module.exports = pool;
 
 
-module.exports = connection;
+
+
+// // Code to create account and push into table 
+// form.addEventListener('submit', async (e) => {
+//     e.preventDefault();
+//     showError('');
+//     joinBtn.disabled = true;
+
+//     const payload = validate();
+//     if (!payload) { joinBtn.disabled = false; return; }
+
+//     try {
+//       const res = await fetch('/api/users', {
+//         method: 'POST',
+//         headers: { 'Content-Type': 'application/json' },
+//         body: JSON.stringify(payload),
+//       });
+//       const data = await res.json();
+//       if (!res.ok) throw new Error(data?.error || 'Signup failed.');
+
+//       form.reset();
+//       alert('Account created successfully!');
+//     } catch (err) {
+//       showError(err.message);
+//     } finally {
+//       joinBtn.disabled = false;
+//     }
+// });
