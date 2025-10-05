@@ -12,7 +12,7 @@ app.use(express.static('public')); // serves index.html, styles.css, script.js
 
 
 
-// Connection db
+//Connection db
 const connection = mysql.createConnection({
   host: 'localhost',
   port: 3306,
@@ -22,16 +22,16 @@ const connection = mysql.createConnection({
 });
 
 connection.connect(err => {
-    if (err) throw err;
-    console.log('Connected to MySql')
+  if (err) throw err;
+  console.log('Connected to MySql')
 });
 
 connection
-.promise()
-.query('SELECT * FROM user_profiles')
-.then(([rows]) => {
+  .promise()
+  .query('SELECT * FROM user_profiles')
+  .then(([rows]) => {
     console.log(rows);
-})
+  })
 
 
 module.exports = connection;
