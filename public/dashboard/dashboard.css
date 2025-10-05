@@ -12,7 +12,7 @@
 
 #logo-container {
     width: 20%;
-    min-width: 200px;
+    min-width: 100px;
     padding: 20px;
     padding-left: 20px;
 }
@@ -72,27 +72,34 @@
 
 
 .course-outline {
-    background-color: #d3e47d64;
     width: 60%;
-    padding: 20px;
     border-radius: 10px;
     margin: auto;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    background-color: #0172505a;
+    box-shadow: 0 0 15px #003D2B;
 }
 
 #roadmap {
     font-family: "Dosis", sans-serif;
     font-size: 50px;
     font-weight: bold;
+    padding-left: 30px;
+    padding-top: 30px;
+    text-align: center;
 }
 
 .section-header {
-    padding-top: 30px;
+    padding: 30px;
     margin-top: 50px;
+    font-weight: bold;
 }
 
 .section-header2 {
-    padding-top: 30px;
+    padding: 30px;
     margin-top: 50px;
+    font-weight: bold;
     padding-bottom: 5px;
 }
 
@@ -106,8 +113,10 @@
 .lesson-div {
     max-height: 45px;
     overflow: hidden;
-    transition: max-height 0.5s;
+    transition: max-height 0.5s ease-in-out;
     padding-top: 30px;
+    padding: 20px;
+    box-shadow: 0px 5px 5px 0px #003d2b3f;
 }
 
 .lesson-title {
@@ -127,7 +136,7 @@
     height: fit-content;
     width: 90%;
     margin: auto;
-    margin-top: 10px;
+    margin-top: 30px;
     flex-shrink: 0;
     padding: 30px;
     font-family: "Dosis", sans-serif;
@@ -166,10 +175,6 @@
 
     }
 
-    #link-container {
-        display: flex;
-        flex-direction: column;
-    }
 
     #learn-link,
     #logout {

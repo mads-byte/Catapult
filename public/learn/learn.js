@@ -363,7 +363,7 @@ function toggleLesson(div, arrow) {
 
     if (height === '45px') {
         arrow.innerHTML = "<i class='fa-solid fa-caret-up'></i>"
-        div.style.maxHeight = div.scrollHeight + 'px'
+        div.style.maxHeight = '3000px'
     } else {
         arrow.innerHTML = `<i class="fa-solid fa-sort-down"></i>`
         div.style.maxHeight = '45px'
@@ -455,6 +455,7 @@ submit.addEventListener('click', (e) => {
     if (finalScore === '6/6' || finalScore === '5/6') {
         lessonsCompleted[1] = 'complete'
         testResult.innerHTML = `Lesson Complete: You Scored ${finalScore}`
+        testResult.style.color = '#003D2B'
     } else if (finalScore !== '6/6' || '5/6') {
         testResult.innerHTML = `Try again: You Scored ${finalScore}`
     }

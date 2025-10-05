@@ -13,7 +13,7 @@
 
 #logo-container {
     width: 20%;
-    min-width: 200px;
+    min-width: 100px;
     padding: 20px;
     padding-left: 20px;
 }
@@ -25,7 +25,7 @@
 
 #link-container {
     padding-right: 30px;
-    font-size: 2.8vw;
+    font-size: 2.6vw;
 }
 
 #dashboard-link {
@@ -63,25 +63,34 @@
     cursor: pointer;
 }
 
+#start-learning {
+    font-size: 50px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
 
 .course-content {
-    background-color: #D2E47D;
+    background-color: #0172505a;
     width: 60%;
     padding: 20px;
     border-radius: 10px;
     margin: auto;
+    box-shadow: 0 0 15px #003D2B;
 }
 
 .lesson-header {
     display: flex;
     justify-content: space-between;
-    font-size: 35px;
+    font-size: 30px;
 }
 
 .lesson-div {
     max-height: 45px;
     overflow: hidden;
     transition: all 0.5s ease-in-out;
+    padding: 20px;
+    box-shadow: 0px 5px 5px 0px #003d2b3f;
 }
 
 .lesson-title {
@@ -99,7 +108,6 @@
 
 .lesson-content {
     background-color: white;
-    height: fit-content;
     width: 90%;
     margin: auto;
     margin-top: 30px;
@@ -111,6 +119,7 @@
     font-size: 20px;
     width: fit-content;
     margin: auto;
+    padding-bottom: 20px;
 }
 
 .content-hide:hover {
@@ -123,7 +132,8 @@
 .lesson-content__ssh {
     padding: 0;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 50px;
+    padding-top: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -274,7 +284,56 @@
 
 
 
+/* The following is styling for Lesson 2: Taxes */
+
+.tax-lesson {
+    font-size: 24px;
+}
+
+.tax-lesson button {
+    font-size: 30px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    background-color: #003D2B;
+    padding: 5px 20px 5px;
+    color: white;
+}
+
+#article-header {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.text-section {
+    margin-top: 50px;
+}
+
+.quiz-header {
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.question {
+    padding-top: 30px;
+}
+
+#result {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+
 @media screen and (max-width: 768px) {
+    .course-content {
+        width: 85%;
+    }
+
     .container {
         width: 300px;
     }
@@ -286,8 +345,60 @@
 
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 450px) {
+
+    #start-learning {
+        font-size: 35px;
+    }
+
+    .lesson-div {
+        padding: 10px;
+    }
+
+    .lesson-header {
+        font-size: 20px;
+    }
+
     .container {
         width: 200px;
+    }
+
+    .htext {
+        margin-top: 80px;
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+
+    .tax-lesson {
+        padding-right: 20px;
+        font-size: 14px;
+    }
+
+    .tax-lesson button {
+        font-size: 20px;
+        margin-top: 25px;
+    }
+
+    #article-header {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .quiz-header {
+        margin-top: 30px;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .question {
+        padding-top: 30px;
+    }
+
+    #result {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
     }
 }
