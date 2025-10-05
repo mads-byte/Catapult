@@ -20,15 +20,26 @@ module.exports = pool;
 
 
 
+//Connection db
+const connection = mysql.createConnection({
+  host: 'localhost',
+  port: 3306,
+  user: 'root',
+  password: 'password',
+  database: 'HOPE Hacks Database',
+});
 
-// // Code to create account and push into table 
-// form.addEventListener('submit', async (e) => {
-//     e.preventDefault();
-//     showError('');
-//     joinBtn.disabled = true;
+connection.connect(err => {
+  if (err) throw err;
+  console.log('Connected to MySql')
+});
 
-//     const payload = validate();
-//     if (!payload) { joinBtn.disabled = false; return; }
+connection
+  .promise()
+  .query('SELECT * FROM user_profiles')
+  .then(([rows]) => {
+    console.log(rows);
+  })
 
 //     try {
 //       const res = await fetch('/api/users', {
