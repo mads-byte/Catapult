@@ -185,6 +185,10 @@
         width: 90%;
     }
 
+    .lesson-div {
+        padding-bottom: 10px;
+    }
+
     .section-header {
         margin-top: 0;
     }
@@ -199,7 +203,7 @@
     .lesson-description {
         font-size: 20px;
         padding: 10px;
-        margin-top: 30px;
+        margin-top: 50px;
     }
 
 }

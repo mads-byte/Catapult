@@ -73,7 +73,7 @@
 .course-content {
     background-color: #0172505a;
     width: 60%;
-    padding: 20px;
+    padding: 0px;
     border-radius: 10px;
     margin: auto;
     box-shadow: 0 0 15px #003D2B;
@@ -87,6 +87,7 @@
 
 .lesson-div {
     max-height: 45px;
+    max-width: 100%;
     overflow: hidden;
     transition: all 0.5s ease-in-out;
     padding: 20px;
@@ -108,9 +109,10 @@
 
 .lesson-content {
     background-color: white;
-    width: 90%;
+    max-width: 95%;
     margin: auto;
     margin-top: 30px;
+    padding: 20px;
     flex-shrink: 0;
     padding: 30px;
 }
@@ -353,6 +355,7 @@
 
     .lesson-div {
         padding: 10px;
+        padding-bottom: 0;
     }
 
     .lesson-header {
@@ -367,6 +370,10 @@
         margin-top: 80px;
         font-size: 1rem;
         line-height: 1.4;
+    }
+
+    .title {
+        font-size: 24px;
     }
 
     .tax-lesson {
