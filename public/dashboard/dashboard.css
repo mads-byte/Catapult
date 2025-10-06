@@ -70,11 +70,15 @@
     cursor: pointer;
 }
 
+#userData {
+    padding-left: 40px;
+}
+
 #circleChartOuter {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background: conic-gradient(#e7e8e9 40%, #003D20 0%, #B1CD2B 60%);
+    background: conic-gradient(#e7e8e9 80%, #003D20 0%, #B1CD2B 20%);
 }
 
 #circleChartInner {
