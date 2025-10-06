@@ -467,3 +467,5 @@ submit.addEventListener('click', (e) => {
 
 
 
+// The following is the script for Lesson 6: Stock Market
+
