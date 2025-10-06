@@ -1,5 +1,9 @@
 
-
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Dosis", sans-serif;
+}
 .ft-section h3 {
     margin-bottom: 10px;
     font-size: 1.2em;
@@ -11,23 +15,38 @@
 }
 
 .sharing {
-    background-color: lightblue;
-    text-align: center;
-    height: 30vh;
-}
-.request {
+    align-content: center;
+    text-align: left;
     height: 25vh;
-}
- .banner{
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 1.8;
+}
+.sharing h3 {
+    text-align: left;
+    font-size: 2em;
+    font-weight: normal;
+    
+}
+.sharing p {
+    font-size: 1.3em;
+}
+
+ .request {
+    height: 15vh;
     background-color: #D2E47D;
+    display: flex;
+   justify-content: center;
+   gap: 8rem;
     align-items: center;
     border: solid;
     border-width: 3px;
     border-color: #B1CD2B;
 }
- .banner p {
+ .request p {
     font-size: 1.1em;
 }
 
@@ -42,7 +61,7 @@
 }
 
 .request-btn:hover {
-    background-color: #45a049;
+    background-color: #B1CD2B;
 }
 
 .email {
@@ -51,41 +70,43 @@
     flex-direction: row;
     justify-content: center;
     gap:20px;
+    margin: 30px;
 }
-
- .logo img {
+.logo {
     margin-bottom: 10px;
     max-width: 300px;
 }
-.email-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-.email-info h2  {
-    font-weight: normal;
-}
-.email-info h3 {
-    font-weight: normal;
-}
 
+.email-info {
+    text-align: center;
+    width: 35%;  
+}
+.email-info h2 {
+    font-weight: normal;
+}
+.email-info h4 {
+    font-weight: normal;
+}
+.email-info p {
+    font-size: 17px;
+}
 .email form {
     margin-top: 15px;
 }
 
 .email input {
     padding: 10px;
-    width: 40%;
+    width: 45%;
     border: none;
     border-bottom: solid;
     margin-right: 3px;
-    
-
+}
+#email-error {
+    color: red;
 }
 .sign-up-btn {
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: #B1CD2B;
     color: white;
     border: none;
     border-radius: 20px;
@@ -93,7 +114,7 @@
 }
 
 .sign-up-btn:hover {
-    background-color: #45a049;
+    background-color: #D2E47D; 
 }
 
 .contact {
@@ -106,11 +127,11 @@
     text-align: center;
     position: relative;
     padding: 60px 20px;
-    height: 25vh;
+    height: 27vh;
 }
 .logo-center {
     position: absolute;
-    top: -35px;
+    top: -50px;
     left: 50%;
     transform: translateX(-50%);    
 }
@@ -121,9 +142,9 @@
 .contact p {
     margin: 10px 0;
     line-height: 1.5;
-    font-size: 1.2em;
-    
+    font-size: 1.2em;  
 }
+
 .icons {
     display: flex;
     justify-content: center;
@@ -136,6 +157,9 @@
 .icons img {
     width: 40px;
     height: auto;
+    background-color: white;
+    border-radius: 50%;
+    padding: 1.5px;
 }
 .ft-links ul {
     display: flex;
@@ -143,4 +167,109 @@
     gap: 10px;
     padding: 0;
     list-style: none;
+    text-decoration: underline;
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .sharing h3 {
+        font-size: 1.5em;
+        margin-left: 15px;
+    }
+    .sharing p {
+        font-size: 1em;
+    }
+}
+@media screen and (min-width:408px) and (max-width: 596px) {
+    .sharing h3{
+        font-size: 1.4em;
+    }
+    .sharing p {
+        font-size: 1em;
+        line-height: 1.5;
+    }
+    .request {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+        width: 100%;
+        height: auto;
+        padding: 1.5rem 0;
+    }
+    .request-btn {
+        width: 70%;
+    }
+    .logo {
+        width: 100%;
+        margin: 0 auto;
+
+    }
+    
+    .email {
+        flex-direction: column;
+        padding-bottom: 20px;
+        gap: 0px;
+    
+    }
+    .email-info {
+        width: 90%;
+        margin-left: 30px;
+    }
+    .email input {
+        width: 90%;
+    }
+
+    .logo-center {
+        top: -40px;
+    }
+    .logo-center img {
+        max-width: 80px;
+    }
+}
+
+ @media screen and (max-width: 407px) {
+        .sharing h3{
+        font-size: 1.4em;
+        text-align: center;
+    }
+    .sharing p {
+        font-size: 1em;
+        line-height: 1.5;
+    }
+    .request {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+        width: 100%;
+        height: auto;
+        padding: 1.5rem 0;
+    }
+    .request-btn {
+        width: 70%;
+    }
+    .logo {
+        width: 100%;
+        margin: 0 auto;
+
+    }
+    
+    .email {
+        flex-direction: column;
+        padding-bottom: 20px;
+        gap: 0px;
+        
+
+    }
+    .email-info {
+        width: 90%;
+        margin-left: 27px;
+    }
+    .email input {
+        width: 90%;
+    }
+    .logo-center {
+        top: -40px;
+    }
+    .logo-center img {
+        max-width: 80px;
+    }
+
+ }
