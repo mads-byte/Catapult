@@ -4,7 +4,7 @@ const cors = require('cors');
 const bcrypt = require('bcrypt'); // 
 require('dotenv').config();
 
-const pool = require('./db');
+const pool = require('backend/db.js');
 
 const app = express();
 app.use(cors());
