@@ -1,2 +1,4 @@
 .env
 certs/
+.vscode
+node_modules

@@ -3,7 +3,7 @@ const password = document.getElementById('user-password')
 const signIn = document.getElementById('sign-in')
 
 
-// JavaScript
+// Dashboard re-route
 signIn.addEventListener('click', async (e) => {
     e.preventDefault();
     if (!username.value || !password.value) {

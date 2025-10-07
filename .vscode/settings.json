@@ -1,3 +1,20 @@
 {
-  "liveServer.settings.port": 5503
+  "liveServer.settings.port": 5503,
+  "sqltools.connections": [
+    {
+      "mysqlOptions": {
+        "authProtocol": "default",
+        "enableSsl": "Disabled"
+      },
+      "ssh": "Disabled",
+      "previewLimit": 150,
+      "server": "hope-hacks.cliiw86m2nxq.us-east-2.rds.amazonaws.com",
+      "port": 3306,
+      "driver": "MySQL",
+      "name": "hopehacks",
+      "username": "admin",
+      "database": "hope_hacks_db",
+      "askForPassword": true
+    }
+  ]
 }
