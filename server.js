@@ -1,13 +1,13 @@
 // server.js
 const express = require('express');
 const cors = require('cors');
-const bcrypt = require('bcryptjs'); // 
+const bcrypt = require('bcrypt'); // 
 require('dotenv').config();
 
-const pool = require('./db');
+const pool = require('backend/db.js');
 
 const app = express();
-app.use(cors());                 
+app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));// servesHTML/JS/CSS
 
@@ -26,15 +26,15 @@ app.get('/health/db', async (req, res) => {
 
 //  API
 // Node fetch
-const marketStackURL = 'https://api.marketstack.com/v2/eod?access_key=${MS_API_KEY}&symbols=AAPL'
-const stockDataURL = 'https://api.stockdata.org/v1/data/quote?symbols=AAPL,TSLA,MSFT&api_token=${SD_API_KEY}'
+const marketStackURL = `https://api.marketstack.com/v2/eod?access_key=${MS_API_KEY}&symbols=AAPL`
+const stockDataURL = `https://api.stockdata.org/v1/data/quote?symbols=AAPL,TSLA,MSFT&api_token=${SD_API_KEY}`
 
 // MarketStack: End of Day (EOD) 
 // GET /api/marketstack/eod?symbols=AAPL,TSLA&limit=1
 app.get('/api/marketstack/eod', async (req, res) => {
   try {
     const symbols = (req.query.symbols || 'AAPL').toUpperCase();
-    const limit   = Number(req.query.limit || 1);
+    const limit = Number(req.query.limit || 1);
 
     const url = new URL(`${MARKETSTACK_BASE}/eod`);
     url.searchParams.set('access_key', process.env.MS_API_KEY);

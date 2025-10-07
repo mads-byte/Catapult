@@ -9,6 +9,8 @@ const overlay = document.querySelector('.container .overlay');
 //javascript for overlay in smart spending habits 
 overlay.addEventListener('click', () => {
     overlay.classList.add('hidden');
+    let lessonHeader = document.getElementById('lesson-header1')
+    lessonHeader.style.color = 'gray'
     lessonsCompleted[0] = 'complete'
     console.log(lessonsCompleted)
 });
@@ -456,6 +458,7 @@ submit.addEventListener('click', (e) => {
         lessonsCompleted[1] = 'complete'
         testResult.innerHTML = `Lesson Complete: You Scored ${finalScore}`
         testResult.style.color = '#003D2B'
+        lessonDiv2.style.color = 'gray';
     } else if (finalScore !== '6/6' || '5/6') {
         testResult.innerHTML = `Try again: You Scored ${finalScore}`
     }
@@ -463,4 +466,6 @@ submit.addEventListener('click', (e) => {
 })
 
 
+
+// The following is the script for Lesson 6: Stock Market
 
