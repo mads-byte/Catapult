@@ -329,7 +329,39 @@
     margin-bottom: 20px;
 }
 
+/*styling for stock lesson*/
+.txt-stock {
+    font-size: 24px;
+    line-height: 1.5;
+}
+.section-stock{
+    margin-bottom: 10%;
 
+}
+
+#r-link {
+    width: fit-content;
+    margin: auto;
+}
+
+.lesson-link {
+    text-align: center;
+    font-size: 24px;
+}
+
+/* The following is styling for Lesson 4: Important Definitions  */
+
+#definitions-content {
+    width: 80%;
+    height: 500px;
+    display: block;
+    margin: auto;
+}
+
+.linkContainer {
+    width: fit-content;
+    margin: auto;
+}
 
 @media screen and (max-width: 768px) {
     .course-content {
@@ -343,6 +375,10 @@
     #link-container {
         padding-right: 30px;
         font-size: 4vw;
+    }
+
+    #definitions-content {
+        min-width: 100%;
     }
 
 }
