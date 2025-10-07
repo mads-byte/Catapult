@@ -9,9 +9,9 @@ const pool = mysql.createPool({
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-  ssl: {
-    ca: fs.readFileSync(path.join(__dirname, 'certs', 'global-bundle.pem'), 'utf8'),
-  },
+  // ssl: {
+  //   ca: fs.readFileSync(path.join(__dirname, 'certs', 'global-bundle.pem'), 'utf8'),
+  // },
   waitForConnections: true,
   connectionLimit: 10,
 });
@@ -21,26 +21,34 @@ module.exports = pool;
 
 
 //Connection db
-const connection = mysql.createConnection({
-  host: 'localhost',
-  port: 3306,
-  user: 'root',
-  password: 'password',
-  database: 'HOPE Hacks Database',
-});
+// const connection = mysql.createConnection({
+//   host: 'localhost',
+//   port: 3306,
+//   user: 'root',
+//   password: 'password',
+//   database: 'HOPE Hacks Database',
+// });
+//
+// connection.connect(err => {
+//   if (err) throw err;
+//   console.log('Connected to MySql')
+// });
+//
+// connection
+//   .promise()
+//   .query('SELECT * FROM user_profiles')
+//   .then(([rows]) => {
+//     console.log(rows);
+//   })
 
-connection.connect(err => {
-  if (err) throw err;
-  console.log('Connected to MySql')
-});
 
-connection
-  .promise()
-  .query('SELECT * FROM user_profiles')
+pool.query('SELECT * FROM user_profiles')
   .then(([rows]) => {
     console.log(rows);
   })
-
+  .catch(err => {
+    console.error(err);
+  });
 //     try {
 //       const res = await fetch('/api/users', {
 //         method: 'POST',
@@ -58,3 +66,5 @@ connection
 //       joinBtn.disabled = false;
 //     }
 // });
+
+

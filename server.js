@@ -1,15 +1,22 @@
-// server.js
+/// server.js
 const express = require('express');
 const cors = require('cors');
-const bcrypt = require('bcryptjs'); // 
+const bcrypt = require('bcrypt'); //
+const userRoutes = require('./backend/users');
+const signInRouter = require('./backend/signIn');
+
 require('dotenv').config();
 
-const pool = require('./db');
+const db = require('./backend/db');
+
 
 const app = express();
 app.use(cors());                 
 app.use(express.json());
 app.use(express.static('public'));// servesHTML/JS/CSS
+app.use(userRoutes);
+app.use(signInRouter);
+
 
 
 // confirm DB connectivity
@@ -89,7 +96,7 @@ app.post('/api/users', async (req, res) => {
 
     // enforce uniqueness
     const [dupe] = await pool.execute(
-      'SELECT id FROM users WHERE username = ? OR email = ? LIMIT 1',
+      'SELECT id FROM user_profiles WHERE username = ? OR email = ? LIMIT 1',
       [username.trim(), email.trim().toLowerCase()]
     );
     if (dupe.length) {
@@ -101,7 +108,7 @@ app.post('/api/users', async (req, res) => {
 
     // insert
     const [result] = await pool.execute(
-      `INSERT INTO users (first_name, last_name, username, email, password_hash)
+      `INSERT INTO user_profiles (first_name, last_name, username, email, password_hash)
        VALUES (?, ?, ?, ?, ?)`,
       [first_name.trim(), last_name.trim(), username.trim(), email.trim().toLowerCase(), password_hash]
     );
