@@ -70,6 +70,26 @@
     cursor: pointer;
 }
 
+#userData {
+    padding-left: 40px;
+}
+
+#circleChartOuter {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: conic-gradient(#e7e8e9 80%, #003D20 0%, #B1CD2B 20%);
+}
+
+#circleChartInner {
+    width: 70px;
+    height: 70px;
+    background-color: white;
+    border-radius: 50%;
+    margin: auto;
+    position: relative;
+    top: 15px;
+}
 
 .course-outline {
     width: 60%;
@@ -185,6 +205,10 @@
         width: 90%;
     }
 
+    .lesson-div {
+        padding-bottom: 10px;
+    }
+
     .section-header {
         margin-top: 0;
     }
@@ -199,7 +223,7 @@
     .lesson-description {
         font-size: 20px;
         padding: 10px;
-        margin-top: 30px;
+        margin-top: 50px;
     }
 
 }

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Investments</title>
+    <link rel="stylesheet" href="investment.css" />
+  </head>
+  <body>
+    <main class="slideshow">
+
+
+
+      <section class="slide slide-active">
+        <div class="slide-content">
+          <header class="slide-header">
+            <img
+              class="slide-logo"
+              alt="Catapult"
+              src="/public/assets/catapult-with-logo.png"
+            />
+            <h1 class="slide-title">
+             Why Investing Matters: Your Money Can Work For You
+            </h1>
+            <p class="slide-tagline">
+              You work hard for your money. But what if your money could work hard for you? That's what investing is all about. While your friends are letting their money sit in a bank account earning pennies, you'll be learning how to make yours grow.
+            </p>
+          </header>
+
+          <div class="slide-intro">
+            <p>In this lesson, you'll learn about the <strong>top 3 ways to invest</strong> your money::</p>
+            <ul class="slide-list">
+              <li>
+                The most popular retirement investment plans (401(k) & Roth IRA)
+              </li>
+              <li>
+                Life insurance options (Whole life vs Term life insurance)
+              </li>
+            </ul>
+          </div>
+           </div>
+          <aside class="slide-aside">
+         <video src="images/Finance_Video2.mp4" style="width: 70%;" autoplay loop alt="Stocks price wall">
+          </aside>
+           <nav class="slide-nav">
+              <h1 class="slide-counter">Starting Early (1/2)</h1>
+              <button
+                class="slide-btn slide-btn-next"
+                onclick="changeSlide(1)"
+                aria-label="Next slide"
+              >→
+              </button>
+            </nav>
+       
+      </section>
+
+
+
+
+<!-- Slide 2 -->
+    <section class="slide">
+  <div class="slide-content">
+    <h2 class="slide-title">Investing Basics — Stocks, ETFs, and Bonds</h2>
+    <iframe class="slide-video"width="560" height="315" src="https://www.youtube.com/embed/ZCFkWDdmXG8?si=EAA0aJMTxkPuY3D7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe class="slide-video" width="560" height="315" src="https://www.youtube.com/embed/dbDijzEgo7E?si=Y7BCLbPR927B8yZs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe class="slide-video" width="560" height="315" src="https://www.youtube.com/embed/KCZJ6Ttsp-A?si=jfTiInr1GY6KCoTB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe class="slide-video" width="560" height="315" src="https://www.youtube.com/embed/N_0d35JvuO0?si=1kozBY-k0L0CPb_o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+
+  <aside class="slide-aside">
+    <div class="quiz">
+      <h3 class="quiz-title">Quiz: Investing Basics</h3>
+
+      <div class="quiz-question" id="q1">
+        <p class="quiz-text">
+          <strong>Question 1:</strong> What do you actually own when you buy a stock?
+        </p>
+        <label class="quiz-option">
+          <input class="quiz-input" type="radio" name="q1" value="A" />
+          <span class="quiz-label"
+            >A) A loan to the company</span
+          >
+        </label>
+        <label class="quiz-option">
+          <input class="quiz-input" type="radio" name="q1" value="B" />
+          <span class="quiz-label"
+            >B) A small piece of ownership in the company</span
+          >
+        </label>
+        <label class="quiz-option">
+          <input class="quiz-input" type="radio" name="q1" value="C" />
+          <span class="quiz-label"
+            >C) A guaranteed return on your money</span
+          >
+        </label>
+        <label class="quiz-option">
+          <input class="quiz-input" type="radio" name="q1" value="D" />
+          <span class="quiz-label"
+            >D) The company's products for free</span
+          >
+        </label>
+        <div class="quiz-explanation"></div>
+      </div>
+
+      <div class="quiz-question" id="q2" hidden>
+        <p class="quiz-text">
+          <strong>Question 2:</strong> What is the main advantage of ETFs over individual stocks?
+        </p>
+        <label class="quiz-option">
+          <input class="quiz-input" type="radio" name="q2" value="A" />
+          <span class="quiz-label"
+            >A) ETFs are guaranteed to make money</span
+          >
+        </label>
+        <label class="quiz-option">
+          <input class="quiz-input" type="radio" name="q2" value="B" />
+          <span class="quiz-label"
+            >B) ETFs provide instant diversification by holding many companies</span
+          >
+        </label>
+        <label class="quiz-option">
+          <input class="quiz-input" type="radio" name="q2" value="C" />
+          <span class="quiz-label"
+            >C) ETFs don't require any money to buy</span
+          >
+        </label>
+        <label class="quiz-option">
+          <input class="quiz-input" type="radio" name="q2" value="D" />
+          <span class="quiz-label">D) ETFs never lose value</span>
+        </label>
+        <div class="quiz-explanation"></div>
+      </div>
+
+      <div class="quiz-question" id="q3" hidden>
+        <p class="quiz-text">
+          <strong>Question 3:</strong> How do bonds differ from stocks?
+        </p>
+        <label class="quiz-option">
+          <input class="quiz-input" type="radio" name="q3" value="A" />
+          <span class="quiz-label"
+            >A) Bonds are loans you make to a company or government, while stocks are ownership</span
+          >
+        </label>
+        <label class="quiz-option">
+          <input class="quiz-input" type="radio" name="q3" value="B" />
+          <span class="quiz-label"
+            >B) Bonds and stocks are exactly the same thing</span
+          >
+        </label>
+        <label class="quiz-option">
+          <input class="quiz-input" type="radio" name="q3" value="C" />
+          <span class="quiz-label">C) Bonds always have higher returns than stocks</span>
+        </label>
+        <label class="quiz-option">
+          <input class="quiz-input" type="radio" name="q3" value="D" />
+          <span class="quiz-label"
+            >D) Bonds are only for people over 65 years old</span
+          >
+        </label>
+        <div class="quiz-explanation"></div>
+      </div>
+
+      <div class="quiz-controls">
+        <button
+          class="quiz-btn quiz-btn-submit"
+          onclick="submitQuizAnswer()"
+        >
+          Submit Answer
+        </button>
+        <button
+          class="quiz-btn quiz-btn-next"
+          onclick="nextQuestion()"
+          hidden
+        >
+          Next Question
+        </button>
+        <div class="quiz-score"></div>
+      </div>
+    </div>
+  </aside>
+
+  <nav class="slide-nav">
+    <button
+      class="slide-btn slide-btn-prev"
+      onclick="changeSlide(-1)"
+      aria-label="Previous slide"
+    >
+      ←
+    </button>
+    <span class="slide-counter">2/2</span>
+    <button
+      class="slide-btn slide-btn-next"
+      onclick="changeSlide(1)"
+      aria-label="Next slide"
+    >
+      →
+    </button>
+  </nav>
+</section>
+      <script src="investment.js"></script>
+</body>
+</html>

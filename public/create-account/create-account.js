@@ -103,13 +103,21 @@ join.addEventListener('click', (e) => {
     }
 })
 
-// Code to create account and push into table 
+
+// Code to create account and push into table
+const form = document.querySelector('form');
+const joinBtn = document.getElementById('join');
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    showError('');
     joinBtn.disabled = true;
 
-    const payload = validate();
+    const payload = {
+        firstName: firstName.value,
+        lastName: lastName.value,
+        username: username.value,
+        email: email.value,
+        password: password.value,
+    }
     if (!payload) { joinBtn.disabled = false; return; }
 
     try {
@@ -124,8 +132,9 @@ form.addEventListener('submit', async (e) => {
       form.reset();
       alert('Account created successfully!');
     } catch (err) {
-      showError(err.message);
+        console.log("error: " + e);
     } finally {
       joinBtn.disabled = false;
     }
 });
+
