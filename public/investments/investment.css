@@ -1,0 +1,863 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Slideshow */
+.slideshow {
+    max-width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+/* Slide */
+.slide {
+    display: none;
+
+}
+
+.slide-active {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    width: 100%;
+    height: 100vh;
+}
+
+.slide-content {
+    grid-column: 1;
+    grid-row: 1;
+    padding: 80px;
+    row-gap: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #2d4a4a;
+    border: solid 0px red;
+}
+
+
+
+.slide-aside {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px;
+    background: #6b8e8e;
+    border: solid 0px rgb(179, 0, 255);
+    row-gap: 2rem;
+}
+
+.slide-aside h2,
+.slide-aside h3 {
+    font-size: 48px;
+    font-weight: bold;
+    color: rgb(49, 96, 71);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.slide-aside p {
+    font-size: 20px;
+    line-height: 1.6;
+    color: rgb(0, 0, 0);
+    margin-bottom: 20px;
+}
+
+.slide-aside p strong {
+    color: #8fcc8f;
+}
+
+.slide-aside img{
+    width: 70%;
+}
+
+.slide-nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    background: #6b8e8e;
+    padding: 30px 80px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Slide Header */
+.slide-header {
+    margin-bottom: 40px;
+}
+
+.slide-logo {
+    height: 40px;
+    width: auto;
+    margin-bottom: 40px;
+}
+
+.slide-title {
+    font-size: 56px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    text-decoration: underline;
+    text-decoration-color: #8fcc8f;
+    text-decoration-thickness: 4px;
+    text-underline-offset: 10px;
+}
+
+.slide-tagline {
+    font-size: 22px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.slide-description {
+    font-size: 22px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.slide-intro {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+/* Slide List */
+.slide-list {
+    list-style: none;
+    font-size: 20px;
+    line-height: 2;
+    margin-top: 20px;
+}
+
+.slide-list li {
+    margin-bottom: 15px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.slide-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #8fcc8f;
+    font-size: 28px;
+    line-height: 1.5;
+}
+
+.slide-list-item {
+    margin-bottom: 15px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.slide-list-item::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #8fcc8f;
+    font-size: 28px;
+    line-height: 1.5;
+}
+
+.slide-interactive-note {
+    font-style: italic;
+    color: #8fcc8f;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.slide-image {
+    width: 100%;
+    max-width: 500px;
+}
+
+.slide-video {
+    border-radius: 10px;
+    width: 100%;
+    max-width: 560px;
+}
+
+.slide-feedback {
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.slide-feedback.correct {
+    background-color: rgba(143, 204, 143, 0.3);
+    color: #8fcc8f;
+}
+
+.slide-feedback.incorrect {
+    background-color: rgba(204, 143, 143, 0.3);
+    color: #cc8f8f;
+}
+
+/* Slide Navigation */
+.slide-counter {
+    color: #8fcc8f;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.slide-btn {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 5px 15px;
+}
+
+.slide-btn:hover {
+    transform: translateX(5px);
+}
+
+.slide-btn-prev:hover {
+    transform: translateX(-5px);
+}
+
+.slide-btn-submit {
+    margin-top: 20px;
+    padding: 15px 40px;
+    background-color: #8fcc8f;
+    color: #2d4a4a;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slide-btn-submit:hover:not(:disabled) {
+    background-color: #6fac6f;
+}
+
+.slide-btn-submit:disabled {
+    background-color: #4a6565;
+    color: #8a9a9a;
+    cursor: not-allowed;
+}
+
+/* Activity */
+.activity {
+    display: flex;
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.activity-cards {
+    position: relative;
+    width: 250px;
+    height: 300px;
+    list-style: none;
+    padding: 0;
+}
+
+.activity-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    color: #2d4a4a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: grab;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.activity-card:active {
+    cursor: grabbing;
+}
+
+.activity-icon {
+    width: 20px;
+    height: 20px;
+    opacity: 0.5;
+}
+
+.activity-text {
+    margin: 0;
+    font-size: 16px;
+}
+
+.activity-zones {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+}
+
+.activity-zone {
+    flex: 1;
+    min-height: 300px;
+}
+
+.activity-zone-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #8fcc8f;
+    color: white;
+}
+
+.activity-drop-area {
+    background: rgba(143, 204, 143, 0.1);
+    border: 2px dashed #8fcc8f;
+    border-radius: 10px;
+    min-height: 250px;
+    padding: 15px;
+    list-style: none;
+}
+
+.activity-drop-area.drag-over {
+    background: rgba(143, 204, 143, 0.3);
+    border-color: #6fac6f;
+}
+
+.activity-drop-area .activity-card {
+    position: relative;
+    margin-bottom: 10px;
+    transform: none;
+}
+
+/* Quiz */
+.quiz {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 30px;
+    color: #2d4a4a;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.quiz-title {
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: #000000;
+    border-bottom: 3px solid #8fcc8f;
+    padding-bottom: 15px;
+}
+
+.quiz-question {
+    margin-bottom: 20px;
+}
+
+.quiz-text {
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    color: #2d4a4a;
+}
+
+.quiz-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 15px;
+    background: #f5f5f5;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 12px;
+}
+
+.quiz-option.correct {
+    background: rgba(143, 204, 143, 0.3);
+    border-color: #8fcc8f;
+}
+
+.quiz-option.incorrect {
+    background: rgba(204, 143, 143, 0.3);
+    border-color: #cc8f8f;
+}
+
+.quiz-input {
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+.quiz-input:disabled {
+    cursor: not-allowed;
+}
+
+.quiz-label {
+    flex: 1;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #2d4a4a;
+}
+
+.quiz-explanation {
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.quiz-explanation.correct-feedback {
+    color: #2d6a2d;
+    background: rgba(143, 204, 143, 0.2);
+}
+
+.quiz-explanation.incorrect-feedback {
+    color: #6a2d2d;
+    background: rgba(204, 143, 143, 0.2);
+}
+
+.quiz-controls {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.quiz-btn {
+    padding: 12px 30px;
+    background-color: #8fcc8f;
+    color: #2d4a4a;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.quiz-btn:active {
+    transform: translateY(0);
+}
+
+.quiz-score {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #2d4a4a;
+    text-align: center;
+    padding: 20px;
+    background: rgba(143, 204, 143, 0.2);
+    border-radius: 8px;
+    border: 2px solid #8fcc8f;
+}
+
+/* Comparison */
+.comparison {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 40px;
+    color: #2d4a4a;
+    width: 100%;
+}
+
+.comparison-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #2d4a4a;
+}
+
+.comparison-scenario {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #2d4a4a;
+}
+
+.comparison-scenario strong {
+    color: #8fcc8f;
+}
+
+.comparison-slider {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.comparison-slider-title {
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: #8fcc8f;
+}
+
+.comparison-slider-input {
+    width: 100%;
+    height: 10px;
+   
+    border-radius: 5px;
+    outline: none;
+    /* -webkit-appearance: none; */
+    margin-bottom: 20px;
+}
+
+.comparison-slider-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    background: #8fcc8f;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.comparison-slider-input::-webkit-slider-thumb:hover {
+    background: #6fac6f;
+    transform: scale(1.1);
+}
+
+.comparison-slider-input::-moz-range-thumb {
+    width: 30px;
+    height: 30px;
+    background: #8fcc8f;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.comparison-slider-input::-moz-range-thumb:hover {
+    background: #6fac6f;
+    transform: scale(1.1);
+}
+
+.comparison-amount {
+    font-size: 32px;
+    font-weight: bold;
+    color: #2d4a4a;
+    margin-top: 15px;
+}
+
+.comparison-lesson {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #2d4a4a;
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(143, 204, 143, 0.2);
+    border-radius: 8px;
+    border-left: 4px solid #8fcc8f;
+}
+
+/* Comparison Table */
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0px;
+    overflow: hidden;
+}
+
+.comparison-table thead {
+    background: #8fcc8f;
+    color: #2d4a4a;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(143, 204, 143, 0.2);
+}
+
+.comparison-table th {
+    font-weight: bold;
+}
+
+.comparison-table tbody th {
+    background: rgba(128, 226, 128, 0.574);
+    font-weight: 600;
+}
+
+/* Takeaway */
+.takeaway {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 30px;
+    color: #2d4a4a;
+    width: 100%;
+}
+
+.takeaway-title {
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #2d4a4a;
+    border-bottom: 3px solid #8fcc8f;
+    padding-bottom: 15px;
+}
+
+.takeaway-section {
+    margin-bottom: 25px;
+}
+
+.takeaway-subtitle {
+    font-size: 22px;
+    color: #8fcc8f;
+    margin-bottom: 10px;
+}
+
+.takeaway-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #2d4a4a;
+}
+
+/* Resources */
+.resources {
+    list-style: none;
+    font-size: 18px;
+    line-height: 2;
+    margin-top: 20px;
+}
+
+.resources-item {
+    margin-bottom: 15px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.resources-item::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #8fcc8f;
+    font-size: 20px;
+}
+
+.resources-link {
+    color: #8fcc8f;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.resources-link:hover {
+    color: #6fac6f;
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .slide-active {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .slide-content {
+        grid-column: 1;
+        grid-row: 1;
+        padding: 30px 20px;
+    }
+
+    .slide-aside {
+        grid-column: 1;
+        grid-row: 2;
+        padding: 30px 20px;
+    }
+
+    .slide-aside h2,
+    .slide-aside h3 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .slide-aside p {
+        font-size: 16px;
+    }
+
+    .slide-nav {
+        grid-column: 1;
+        grid-row: 3;
+        padding: 20px;
+    }
+
+    .slide-logo {
+        height: 40px;
+        margin-bottom: 20px;
+    }
+
+    .slide-title {
+        font-size: 32px;
+    }
+
+    .slide-tagline,
+    .slide-description,
+    .slide-intro {
+        font-size: 16px;
+    }
+
+    .slide-list {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .slide-counter {
+        font-size: 16px;
+    }
+
+    .slide-btn {
+        font-size: 24px;
+        padding: 5px 10px;
+    }
+
+    .slide-btn-submit {
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+
+    .activity {
+        flex-direction: column;
+    }
+
+    .activity-cards {
+        width: 100%;
+        height: 200px;
+    }
+
+    .activity-card {
+        font-size: 14px;
+    }
+
+    .activity-zones {
+        flex-direction: column;
+    }
+
+    .activity-zone {
+        min-height: 200px;
+    }
+
+    .activity-zone-title {
+        font-size: 20px;
+    }
+
+    .activity-drop-area {
+        min-height: 150px;
+    }
+
+    .quiz {
+        padding: 20px;
+        max-height: 70vh;
+    }
+
+    .quiz-title {
+        font-size: 20px;
+    }
+
+    .quiz-text {
+        font-size: 16px;
+    }
+
+    .quiz-option {
+        padding: 12px;
+    }
+
+    .quiz-label {
+        font-size: 14px;
+    }
+
+    .quiz-btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .quiz-score {
+        font-size: 16px;
+    }
+
+    .comparison {
+        padding: 20px;
+    }
+
+    .comparison-title {
+        font-size: 24px;
+    }
+
+    .comparison-scenario {
+        font-size: 16px;
+    }
+
+    .comparison-slider-title {
+        font-size: 20px;
+    }
+
+    .comparison-amount {
+        font-size: 24px;
+    }
+
+    .comparison-lesson {
+        font-size: 14px;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .takeaway {
+        padding: 20px;
+    }
+
+    .takeaway-title {
+        font-size: 22px;
+    }
+
+    .takeaway-subtitle {
+        font-size: 18px;
+    }
+
+    .takeaway-text {
+        font-size: 14px;
+    }
+
+    .resources {
+        font-size: 16px;
+    }
+
+    .slide-image {
+        max-width: 100%;
+    }
+
+    .animation{
+        width: 300px;
+        height: 300px;
+    }
+   
+   
+}
+
+   #last-slide-logo{
+        width: 20rem;
+        height: auto;
+    }
+@media screen and (min-width: 768px) {
+    .animation{
+        width: 600px;
+    }
+}

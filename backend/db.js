@@ -21,9 +21,21 @@ pool.query('SELECT * FROM user_profiles')
   .then(([rows]) => {
     console.log(rows);
   })
-  .catch(err => {
-    console.error(err);
-  });
 
+//     try {
+//       const res = await fetch('/api/users', {
+//         method: 'POST',
+//         headers: { 'Content-Type': 'application/json' },
+//         body: JSON.stringify(payload),
+//       });
+//       const data = await res.json();
+//       if (!res.ok) throw new Error(data?.error || 'Signup failed.');
 
-
+//       form.reset();
+//       alert('Account created successfully!');
+//     } catch (err) {
+//       showError(err.message);
+//     } finally {
+//       joinBtn.disabled = false;
+//     }
+// });

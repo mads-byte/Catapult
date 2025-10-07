@@ -7,13 +7,13 @@
         "enableSsl": "Disabled"
       },
       "ssh": "Disabled",
-      "previewLimit": 150,
+      "previewLimit": 50,
       "server": "hope-hacks.cliiw86m2nxq.us-east-2.rds.amazonaws.com",
       "port": 3306,
       "driver": "MySQL",
       "name": "hopehacks",
-      "username": "admin",
       "database": "hope_hacks_db",
+      "username": "admin",
       "askForPassword": true
     }
   ]
