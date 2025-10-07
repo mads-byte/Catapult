@@ -1,4 +1,5 @@
-// server.js
+/// server.js
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const bcrypt = require('bcrypt'); // 
@@ -10,6 +11,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));// servesHTML/JS/CSS
+app.use(userRoutes);
+app.use(signInRouter);
+
 
 
 // confirm DB connectivity
@@ -78,40 +82,40 @@ app.get('/api/stockdata/quotes', async (req, res) => {
 //////////////
 ///////////////////////
 // Signup endpoint for create account end point //
-app.post('/api/users', async (req, res) => {
-  try {
-    const { first_name, last_name, username, email, password } = req.body;
+// app.post('/api/users', async (req, res) => {
+//   try {
+//     const { first_name, last_name, username, email, password } = req.body;
 
-    // basic validation (frontend also validates)
-    if (!first_name || !last_name || !username || !email || !password) {
-      return res.status(400).json({ error: 'Missing required fields.' });
-    }
+//     // basic validation (frontend also validates)
+//     if (!first_name || !last_name || !username || !email || !password) {
+//       return res.status(400).json({ error: 'Missing required fields.' });
+//     }
 
-    // enforce uniqueness
-    const [dupe] = await pool.execute(
-      'SELECT id FROM users WHERE username = ? OR email = ? LIMIT 1',
-      [username.trim(), email.trim().toLowerCase()]
-    );
-    if (dupe.length) {
-      return res.status(409).json({ error: 'Username or email already in use.' });
-    }
+//     // enforce uniqueness
+//     const [dupe] = await pool.execute(
+//       'SELECT id FROM user_profiles WHERE username = ? OR email = ? LIMIT 1',
+//       [username.trim(), email.trim().toLowerCase()]
+//     );
+//     if (dupe.length) {
+//       return res.status(409).json({ error: 'Username or email already in use.' });
+//     }
 
-    // hash password
-    const password_hash = await bcrypt.hash(password, 12);
+//     // hash password
+//     const password_hash = await bcrypt.hash(password, 12);
 
-    // insert
-    const [result] = await pool.execute(
-      `INSERT INTO users (first_name, last_name, username, email, password_hash)
-       VALUES (?, ?, ?, ?, ?)`,
-      [first_name.trim(), last_name.trim(), username.trim(), email.trim().toLowerCase(), password_hash]
-    );
+//     // insert
+//     const [result] = await pool.execute(
+//       `INSERT INTO user_profiles (first_name, last_name, username, email, password_hash)
+//        VALUES (?, ?, ?, ?, ?)`,
+//       [first_name.trim(), last_name.trim(), username.trim(), email.trim().toLowerCase(), password_hash]
+//     );
 
-    res.status(201).json({ id: result.insertId });
-  } catch (err) {
-    console.error('POST /api/users error:', err);
-    res.status(500).json({ error: 'Server error. Please try again.' });
-  }
-});
+//     res.status(201).json({ id: result.insertId });
+//   } catch (err) {
+//     console.error('POST /api/users error:', err);
+//     res.status(500).json({ error: 'Server error. Please try again.' });
+//   }
+// });
 
 const PORT = Number(process.env.PORT || 3000);
 app.listen(PORT, () => {
