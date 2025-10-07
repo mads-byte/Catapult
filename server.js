@@ -6,18 +6,49 @@ const signInRouter = require('./backend/signin');
 require('dotenv').config();
 const db = require('./backend/db');
 const app = express();
-app.use(cors());
+
+
+app.use(cors({ origin: true, credentials: true }));
 app.use(express.json());
-app.use(express.static('public'));// servesHTML/JS/CSS
+app.use(express.static('public'));
+
+// Sessions 
+const isProd = process.env.NODE_ENV === 'production';
+const store = new MySQLStore(dbConfig);
+
+app.use(session({
+  secret: process.env.SESSION_SECRET || 'dev-secret-change-me',
+  store,
+  name: 'hh.sid',
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    httpOnly: true,
+    secure: isProd,                      // 
+    sameSite: isProd ? 'none' : 'lax',   // 
+    maxAge: 1000 * 60 * 60 * 24 * 7,     // 7 days
+  },
+}));
+
+// ensure table
+ensureProgressTable().catch(console.error);
+
+// ---- routes
 app.use(userRoutes);
 app.use(signInRouter);
 // confirm DB connectivity
 app.get('/health/db', async (req, res) => {
   try {
-    const [rows] = await pool.query('SELECT 1 AS ok');
-    res.json({ db: rows[0].ok === 1 ? 'up' : 'unknown' });
+    const [[cnt]] = await pool.query('SELECT COUNT(*) AS total FROM hopehacks.user_profiles');
+    const [rows]  = await pool.query(`
+      SELECT id, username, email, first_name, last_name, created_at
+      FROM hopehacks.user_profiles
+      ORDER BY created_at DESC
+      LIMIT 10
+    `);
+    res.json({ total: cnt.total, sample: rows });
   } catch (e) {
-    res.status(500).json({ db: 'down', error: e.message });
+    res.status(500).json({ error: e.message });
   }
 });
 //  API

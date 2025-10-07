@@ -1,5 +1,43 @@
 // tracks lessons completed
-let lessonsCompleted = ['incomplete', 'incomplete', 'incomplete', 'incomplete', 'incomplete', 'incomplete'];
+let lessonsCompleted = ['incomplete','incomplete','incomplete','incomplete','incomplete','incomplete'];
+
+// load progress
+async function loadProgress() {
+  try {
+    const res = await fetch('/api/progress', { credentials: 'include' });
+    const data = await res.json();
+    if (Array.isArray(data.lessons)) {
+      lessonsCompleted = data.lessons.slice();
+      applyProgressToUI();          // 👈 paint UI after loading
+      console.log('Loaded progress:', lessonsCompleted);
+    }
+  } catch (e) { console.warn('progress load failed', e); }
+}
+
+async function saveProgress() {
+  try {
+    await fetch('/api/progress', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      body: JSON.stringify({ lessons: lessonsCompleted })
+    });
+    console.log('Progress saved');
+  } catch (e) { console.warn('progress save failed', e); }
+}
+
+// 
+function applyProgressToUI() {
+  // assumes you have IDs lesson-header1 .. lesson-header6
+  for (let i = 0; i < 6; i++) {
+    const header = document.getElementById(`lesson-header${i+1}`);
+    if (!header) continue;
+    header.style.color = (lessonsCompleted[i] === 'complete') ? 'gray' : '';
+  }
+}
+
+// loadProgress on every page
+document.addEventListener('DOMContentLoaded', loadProgress);
 
 
 // The following is the script for Lesson 1: Smart Spending Habits
@@ -321,7 +359,7 @@ const textNodes = [
 ]
 
 startGame()
-
+document.addEventListener('DOMContentLoaded', loadProgress);
 
 
 
