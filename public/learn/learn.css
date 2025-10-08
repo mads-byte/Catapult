@@ -329,7 +329,31 @@
     margin-bottom: 20px;
 }
 
+/* The following is styling for Lesson 3: Retirement/Life Insurance */
 
+#r-link {
+    width: fit-content;
+    margin: auto;
+}
+
+.lesson-link {
+    text-align: center;
+    font-size: 24px;
+}
+
+/* The following is styling for Lesson 4: Important Definitions  */
+
+#definitions-content {
+    width: 80%;
+    height: 500px;
+    display: block;
+    margin: auto;
+}
+
+.linkContainer {
+    width: fit-content;
+    margin: auto;
+}
 
 @media screen and (max-width: 768px) {
     .course-content {
@@ -343,6 +367,10 @@
     #link-container {
         padding-right: 30px;
         font-size: 4vw;
+    }
+
+    #definitions-content {
+        min-width: 100%;
     }
 
 }

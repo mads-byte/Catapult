@@ -86,7 +86,6 @@ app.get('/api/marketstack/eod', async (req, res) => {
     url.searchParams.set('access_key', process.env.MS_API_KEY);
     url.searchParams.set('symbols', symbols);
     url.searchParams.set('limit', String(limit));
-
     const r = await fetch(url);
     if (!r.ok) throw new Error(`MarketStack ${r.status}`);
     res.json(await r.json());
@@ -104,7 +103,6 @@ app.get('/api/stockdata/quotes', async (req, res) => {
     const url = new URL(`${STOCKDATA_BASE}/data/quote`);
     url.searchParams.set('symbols', symbols);
     url.searchParams.set('api_token', process.env.SD_API_KEY);
-
     const r = await fetch(url);
     if (!r.ok) throw new Error(`StockData ${r.status}`);
     res.json(await r.json());
@@ -112,6 +110,10 @@ app.get('/api/stockdata/quotes', async (req, res) => {
     console.error('StockData error:', err);
     res.status(502).json({ error: 'StockData fetch failed' });
   }
+});
+const PORT = Number(process.env.PORT || 3000);
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
 });
 
 
