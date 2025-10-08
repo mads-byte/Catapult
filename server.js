@@ -22,11 +22,9 @@ app.use(express.static('public'));
 
 // Sessions 
 const isProd = process.env.NODE_ENV === 'production';
-const store = new MySQLStore(dbConfig);
 
 app.use(session({
   secret: process.env.SESSION_SECRET || 'dev-secret-change-me',
-  store,
   name: 'hh.sid',
   resave: false,
   saveUninitialized: false,
