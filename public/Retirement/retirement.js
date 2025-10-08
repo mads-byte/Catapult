@@ -186,7 +186,7 @@ function submitQuizAnswer() {
     // Hide submit button, show next button
     const submitBtn = document.querySelector('.quiz-btn-submit');
     const nextBtn = document.querySelector('.quiz-btn-next');
-    
+
     if (submitBtn) submitBtn.style.display = 'none';
 
     if (currentQuestion < 3) {
@@ -215,7 +215,7 @@ function nextQuestion() {
     // Reset buttons
     const submitBtn = document.querySelector('.quiz-btn-submit');
     const nextBtn = document.querySelector('.quiz-btn-next');
-    
+
     if (submitBtn) submitBtn.style.display = 'block';
     if (nextBtn) nextBtn.style.display = 'none';
 }
@@ -225,7 +225,14 @@ const contributionSlider = document.getElementById('contribution');
 const contributionValue = document.getElementById('amount');
 
 if (contributionSlider && contributionValue) {
-    contributionSlider.addEventListener('input', function() {
+    contributionSlider.addEventListener('input', function () {
         contributionValue.textContent = this.value;
     });
 }
+
+
+const completeButton = document.getElementById('complete-lesson');
+
+completeButton.addEventListener('click', () => {
+    sessionStorage.setItem('lesson3', 'complete')
+})

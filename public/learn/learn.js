@@ -1,39 +1,39 @@
 // tracks lessons completed
-let lessonsCompleted = ['incomplete','incomplete','incomplete','incomplete','incomplete','incomplete'];
+let lessonsCompleted = ['incomplete', 'incomplete', 'incomplete', 'incomplete', 'incomplete', 'incomplete'];
 
 // load progress
 async function loadProgress() {
-  try {
-    const res = await fetch('/api/progress', { credentials: 'include' });
-    const data = await res.json();
-    if (Array.isArray(data.lessons)) {
-      lessonsCompleted = data.lessons.slice();
-      applyProgressToUI();          // 👈 paint UI after loading
-      console.log('Loaded progress:', lessonsCompleted);
-    }
-  } catch (e) { console.warn('progress load failed', e); }
+    try {
+        const res = await fetch('/api/progress', { credentials: 'include' });
+        const data = await res.json();
+        if (Array.isArray(data.lessons)) {
+            lessonsCompleted = data.lessons.slice();
+            applyProgressToUI();          // 👈 paint UI after loading
+            console.log('Loaded progress:', lessonsCompleted);
+        }
+    } catch (e) { console.warn('progress load failed', e); }
 }
 
 async function saveProgress() {
-  try {
-    await fetch('/api/progress', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      credentials: 'include',
-      body: JSON.stringify({ lessons: lessonsCompleted })
-    });
-    console.log('Progress saved');
-  } catch (e) { console.warn('progress save failed', e); }
+    try {
+        await fetch('/api/progress', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include',
+            body: JSON.stringify({ lessons: lessonsCompleted })
+        });
+        console.log('Progress saved');
+    } catch (e) { console.warn('progress save failed', e); }
 }
 
 // 
 function applyProgressToUI() {
-  // assumes you have IDs lesson-header1 .. lesson-header6
-  for (let i = 0; i < 6; i++) {
-    const header = document.getElementById(`lesson-header${i+1}`);
-    if (!header) continue;
-    header.style.color = (lessonsCompleted[i] === 'complete') ? 'gray' : '';
-  }
+    // assumes you have IDs lesson-header1 .. lesson-header6
+    for (let i = 0; i < 6; i++) {
+        const header = document.getElementById(`lesson-header${i + 1}`);
+        if (!header) continue;
+        header.style.color = (lessonsCompleted[i] === 'complete') ? 'gray' : '';
+    }
 }
 
 // loadProgress on every page
@@ -47,10 +47,7 @@ const overlay = document.querySelector('.container .overlay');
 //javascript for overlay in smart spending habits 
 overlay.addEventListener('click', () => {
     overlay.classList.add('hidden');
-    let lessonHeader = document.getElementById('lesson-header1')
-    lessonHeader.style.color = 'gray'
-    lessonsCompleted[0] = 'complete'
-    console.log(lessonsCompleted)
+    sessionStorage.setItem('lesson1', 'complete')
 });
 //javascript for smart spending habits scenario game
 let state = {}
@@ -395,6 +392,9 @@ const arrow6 = document.getElementById('arrow6')
 const contentHide6 = document.getElementById('content-hide6')
 
 
+const retirementLink = document.getElementById('r-link')
+
+
 
 
 function toggleLesson(div, arrow) {
@@ -490,20 +490,36 @@ submit.addEventListener('click', (e) => {
         ...formObject
     }
     let finalScore = taxQuizScore(finalQuizData)
-    console.log(finalQuizData)
-    console.log(taxQuizScore(finalQuizData))
     if (finalScore === '6/6' || finalScore === '5/6') {
-        lessonsCompleted[1] = 'complete'
         testResult.innerHTML = `Lesson Complete: You Scored ${finalScore}`
         testResult.style.color = '#003D2B'
-        lessonDiv2.style.color = 'gray';
+        sessionStorage.setItem('lesson2', 'complete')
     } else if (finalScore !== '6/6' || '5/6') {
         testResult.innerHTML = `Try again: You Scored ${finalScore}`
     }
     console.log(lessonsCompleted)
 })
 
+const lesson4btn = document.getElementById('lesson-link4')
+lesson4btn.addEventListener('click', () => {
+    sessionStorage.setItem('lesson4', 'complete')
+    console.log(sessionStorage.getItem('progress'))
+})
 
 
-// The following is the script for Lesson 6: Stock Market
+const lesson5btn = document.getElementById('lesson-link5')
+lesson5btn.addEventListener('click', () => {
+    sessionStorage.setItem('lesson5', 'complete')
+    console.log(sessionStorage.getItem('progress'))
+})
+
+
+arrow6.addEventListener('click', () => {
+    sessionStorage.setItem('lesson6', 'complete')
+    console.log(sessionStorage.getItem('lesson1'), sessionStorage.getItem('lesson3'), sessionStorage.getItem('lesson6'))
+})
+// arrow3.addEventListener('click', () => {
+//     sessionStorage.setItem('progress', '3/6')
+//     console.log(sessionStorage.getItem('progress'))
+// })
 
