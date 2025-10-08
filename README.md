@@ -31,7 +31,6 @@
 ✅ Interactive lessons on key money topics  
 ✅ Expandable lesson cards with smooth animations  
 ✅ Built-in quizzes and learning games  
-✅ Personalized dashboard with user progress  
 ✅ Secure MySQL backend with connection pooling  
 ✅ SSL-encrypted connections for production environments  
 
