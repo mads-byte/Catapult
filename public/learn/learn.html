@@ -235,8 +235,8 @@
                 <div id="arrow3" class="arrow"><i class="fa-solid fa-sort-down"></i></div>
             </div>
             <div class="lesson-content">
-                <div id="r-link">
-                    <a class="lesson-link" href="../Retirement/retirement.html">Click Here to view the lesson</a>
+                <div class="lesson-btn" id="r-link">
+                    <a class="lesson-link" href="../Retirement/retirement.html">Click To Start Lesson</a>
                 </div>
                 <div id="content-hide3" class="content-hide">
                     <i class='fa-solid fa-caret-up'></i> Hide Lesson
@@ -249,8 +249,9 @@
                 <div id="arrow4" class="arrow"><i class="fa-solid fa-sort-down"></i></div>
             </div>
             <div class="lesson-content">
-                <div class="linkContainer">
-                    <a class="lesson-link" href="../definitions/definitions.html">Click Here to view the lesson</a>
+                <div class="lesson-btn">
+                    <a class="lesson-link" id="lesson-link4" href="../definitions/definitions.html">Click To Start
+                        Lesson</a>
                 </div>
                 <div id="content-hide4" class="content-hide">
                     <i class='fa-solid fa-caret-up'></i> Hide Lesson
@@ -263,8 +264,9 @@
                 <div id="arrow5" class="arrow"><i class="fa-solid fa-sort-down"></i></div>
             </div>
             <div class="lesson-content">
-                <div class="linkContainer">
-                    <a class="lesson-link" href="../investments/investment.html">Click Here to view the lesson</a>
+                <div class="lesson-btn">
+                    <a class="lesson-link" id="lesson-link5" href="../investments/investment.html">Click To Start
+                        Lesson</a>
                 </div>
                 <div id="content-hide5" class="content-hide">
                     <i class='fa-solid fa-caret-up'></i> Hide Lesson
@@ -278,38 +280,41 @@
             </div>
             <div class="lesson-content">
                 <div>
-                    <div id="symbols"></div>
-                    <table id="quotes">
-                        <tbody></tbody>
-                    </table>
-                    <table id="eod">
-                        <tbody></tbody>
-                    </table>
-                    <button id="load-stocks">Load Stocks</button>
                     <div> <!--put stock lesson-->
                         <div class="section-stock">
                             <h1 class="title-stock">What is the stock market?</h1>
-                            <p class="txt-stock">The stock market refers to public markets that exist for issuing, buying, and selling stocks. Stocks represent fractional ownership in a company,
-                            and the stock market is a place where investors can buy and sell stocks.
-                            An efficiently functioning stock market is important to economic development, as it gives
-                            companies the ability to quicky access capital from the public.</p>
+                            <p class="txt-stock">The stock market refers to public markets that exist for issuing,
+                                buying, and selling stocks. Stocks represent fractional ownership in a company,
+                                and the stock market is a place where investors can buy and sell stocks.
+                                An efficiently functioning stock market is important to economic development, as it
+                                gives
+                                companies the ability to quicky access capital from the public.</p>
                         </div>
 
                         <div class="section-stock">
                             <h2>What is the purpose of the Stock Market?</h2>
-                            <p class="txt-stock">The stock market serves two main purposes. First, it provides companies with a way to raise capital for growth and expansion by selling shares,
-                            allowing them to avoid taking on debt or paying interest. Second, it offers investors the chance to earn profits by becoming part owners of
-                            publicly traded companies. Investors can make money either through dividends, which are regular payments made per share, or by selling their 
-                            stocks at a higher price than they originally paid, thus earning a profit from the incease in value</p>
+                            <p class="txt-stock">The stock market serves two main purposes. First, it provides companies
+                                with a way to raise capital for growth and expansion by selling shares,
+                                allowing them to avoid taking on debt or paying interest. Second, it offers investors
+                                the chance to earn profits by becoming part owners of
+                                publicly traded companies. Investors can make money either through dividends, which are
+                                regular payments made per share, or by selling their
+                                stocks at a higher price than they originally paid, thus earning a profit from the
+                                incease in value</p>
                         </div>
 
                         <div class="section-stock">
-                             <h2>How are stocks Traded?</h2>
-                            <p class="txt-stock">Most stocks are traded on major exchanges like the New York Stock exchange(NYSE), which provide a regulated marketplace for buying and selling stocks. 
-                            These exchanges are overseen by government agencies such as the Securities and Exchange Commission (SEC) to protect investors and ensure fair trading. 
-                            However, some stocks are traded over-the-counter(OTC) through dealers known as market makers. OTC stocks often fail to meet the lisiting requirements 
-                            of major exchanges and are subject to fewer reporting regulations, making it harder for investors to find reliable information. As a result OTC stocks 
-                            tend to be less luquid, with fewer trades and larger differences betweeen buying and selling prices compared to exchange-traded stocks</p>
+                            <h2>How are stocks Traded?</h2>
+                            <p class="txt-stock">Most stocks are traded on major exchanges like the New York Stock
+                                exchange(NYSE), which provide a regulated marketplace for buying and selling stocks.
+                                These exchanges are overseen by government agencies such as the Securities and Exchange
+                                Commission (SEC) to protect investors and ensure fair trading.
+                                However, some stocks are traded over-the-counter(OTC) through dealers known as market
+                                makers. OTC stocks often fail to meet the lisiting requirements
+                                of major exchanges and are subject to fewer reporting regulations, making it harder for
+                                investors to find reliable information. As a result OTC stocks
+                                tend to be less luquid, with fewer trades and larger differences betweeen buying and
+                                selling prices compared to exchange-traded stocks</p>
                         </div>
                     </div>
                 </div>
@@ -319,6 +324,61 @@
             </div>
         </div>
     </div>
+    <footer>
+        <div class="ft-Container">
+            <div class="ft-section sharing">
+                <div class="sharing-txt">
+                    <h3>Sharing is caring!</h3>
+                    <p>If you find this helpful, share with a parent or caregiver you know! Help us spread the word to
+                        get all kids set up for future finacial success!</p>
+                </div>
+            </div>
+            <div class="ft-section request">
+                <p>LOOKING FOR SOMETHING ELSE?</p>
+                <button class="request-btn">SEND A REQUEST!</button>
+            </div>
+            <div class="ft-section email">
+                <img class="logo" src="/public/assets/Catapult.png" alt="logo">
+                <div class="email-info">
+                    <h2>Stay in the Know</h2>
+                    <h4>MONEY TALKS. JOIN THE CONVERSATION.</h4>
+                    <p>Sign up with your email address to recieve free financial literacy guidance straight to your
+                        inbox!</p>
+                    <p>Opt out at any time.</p>
+                    <form id="sign-up" novalidate>
+                        <input type="email" id="email" placeholder="Email address" />
+                        <button type="submit" class="sign-up-btn">SIGN UP</button>
+                        <p id="email-error"></p>
+                    </form>
+                </div>
+            </div>
+            <div class="ft-section contact">
+                <div class="logo-center">
+                    <img src="/public/assets/catapult-logo.png" alt="logo">
+                </div>
+                <div class="contact-info">
+                    <p class="c-email">info@Catapult.com</p>
+                    <p> © 2025 Catapult</p>
+                    <div class="icons">
+                        <a href="https://www.instagram.com/?hl=en" target="_blank">
+                            <img src="/public/footer/instagram_icon.png" alt="Instagram" />
+                        </a>
+                        <a href="https://www.facebook.com/" target="_blank">
+                            <img src="/public/footer/facebook_icon.png" alt="Facebook" />
+                        </a>
+                    </div>
+                    <div class="ft-links">
+                        <ul>
+                            <li>Privacy |</li>
+                            <li>Terms of Sale |</li>
+                            <li>Web Terms</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
     <script src="https://kit.fontawesome.com/3cc749efd0.js" crossorigin="anonymous"></script>
     <script src="learn.js"></script>
 </body>

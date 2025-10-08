@@ -1,4 +1,22 @@
+let progress = [sessionStorage.lesson1, sessionStorage.lesson2, sessionStorage.lesson3, sessionStorage.lesson4, sessionStorage.lesson5, sessionStorage.lesson6]
+console.log(progress)
+let completed = 0
+for (let i = 0; i < 6; i++) {
+    if (progress[i] === "complete") {
+        completed++;
+    }
+}
+console.log(completed)
 
+let percentageCompleteStr = ((completed / 6) * 100).toFixed(1)
+let percentageComplete = parseFloat(percentageCompleteStr)
+let percentageLeft = 100 - percentageComplete
+console.log(percentageComplete, percentageLeft)
+const percentageDisplay = document.getElementById('percentageDisplay')
+percentageDisplay.textContent = `${percentageComplete}`
+
+const progressCircle = document.getElementById('circleChartOuter')
+progressCircle.style.background = `conic-gradient( #e7e8e9 ${percentageLeft}%, #003D20 0%, #B1CD2B ${percentageComplete}%)`
 const divs = document.querySelectorAll('.lesson-div')
 
 const lessonDiv1 = document.getElementById('lesson-div1')
