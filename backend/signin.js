@@ -28,7 +28,6 @@ router.post('/api/signin', async (req, res) => {
       success: true,
       user: { id: u.id, username, first_name: u.first_name, last_name: u.last_name },
     });
-    sessionStorage.setItem('name', `${u.first_name}`)
   } catch (err) {
     console.error('signin error', err);
     res.status(500).json({ error: 'Server error' });
