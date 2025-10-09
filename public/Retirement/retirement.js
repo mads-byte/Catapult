@@ -2,6 +2,7 @@ let currentSlide = 0;
 const slides = document.querySelectorAll('.slide');
 const totalSlides = slides.length;
 
+
 function showSlide(index) {
     // This removes the active class from any slide that is in our slides class list
     slides.forEach(slide => slide.classList.remove('slide-active'));
@@ -32,8 +33,10 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+
 // Initialize
 showSlide(0);
+
 
 // Drag and Drop Functionality
 let cards = document.querySelectorAll('.activity-card');
@@ -186,7 +189,7 @@ function submitQuizAnswer() {
     // Hide submit button, show next button
     const submitBtn = document.querySelector('.quiz-btn-submit');
     const nextBtn = document.querySelector('.quiz-btn-next');
-
+    
     if (submitBtn) submitBtn.style.display = 'none';
 
     if (currentQuestion < 3) {
@@ -205,7 +208,7 @@ function nextQuestion() {
     const currentQ = document.getElementById(`q${currentQuestion}`);
     if (currentQ) currentQ.style.display = 'none';
 
-    // The currentquestion variable should increment by one to go to the next question
+    // The current question variable should increment by one to go to the next question
     currentQuestion++;
 
     // Show next question
@@ -215,7 +218,7 @@ function nextQuestion() {
     // Reset buttons
     const submitBtn = document.querySelector('.quiz-btn-submit');
     const nextBtn = document.querySelector('.quiz-btn-next');
-
+    
     if (submitBtn) submitBtn.style.display = 'block';
     if (nextBtn) nextBtn.style.display = 'none';
 }
@@ -223,12 +226,106 @@ function nextQuestion() {
 // Contribution Slider Functionality
 const contributionSlider = document.getElementById('contribution');
 const contributionValue = document.getElementById('amount');
+const comparisonValues = document.querySelectorAll('.comparison-values');
 
 if (contributionSlider && contributionValue) {
-    contributionSlider.addEventListener('input', function () {
+    contributionSlider.addEventListener('input', function() {
+        // Update the display of monthly contribution amount
         contributionValue.textContent = this.value;
+        
+        // Calculate retirement values using the slider value
+        const results = calculateRetirement(parseInt(this.value));
+        
+        // Update each account display
+        // Index 0 = 401k, Index 1 = Roth IRA, Index 2 = Savings
+        comparisonValues[0].textContent = '$' + Math.round(results['401k']).toLocaleString();
+        comparisonValues[1].textContent = '$' + Math.round(results['rothIRA']).toLocaleString();
+        comparisonValues[2].textContent = '$' + Math.round(results['savings']).toLocaleString();
     });
+    
 }
+
+
+
+function calculateRetirement(monthlyContribution) {
+  
+  const years = 49; // age 18 to 67
+  const months = years * 12; // 49 × 12 = 588 months
+
+  // Tax rates
+  const currentTaxRate = 0.12; // 12% tax bracket now (low for young people)
+  const retirementTaxRate = 0.22; // 22% tax bracket in retirement
+  
+  // Annual growth rates for each account type (in percentage)
+  const growthRates = {
+    '401k': 0.08,        // 8% per year
+    'rothIRA': 0.08,     
+    'savings': 0.02      // 2% per year
+  };
+  
+  // This will store our final calculated amounts
+  const results = {};
+  
+  // ----- 401k CALCULATION ------
+  // Converting annual rate to monthly (8% ÷ 12 months)
+  const monthlyRate401k = growthRates['401k'] / 12; 
+  
+  const biweeklyContribution = monthlyContribution / 2;
+  
+  // Estimate bi-weekly paycheck based on contribution
+  // Assuming 6% of each paycheck is being contributed
+  const estimatedBiweeklyPaycheck = biweeklyContribution / 0.06;
+  
+  // Employer matches 50% of contribution, up to 6% of the paycheck
+  const matchLimitPerPaycheck = estimatedBiweeklyPaycheck * 0.06; // 6% of paycheck
+  const employerMatchPerPaycheck = Math.min(biweeklyContribution * 0.5, matchLimitPerPaycheck);
+  
+  // Convert back to monthly (2 paychecks per month)
+  const monthlyEmployerMatch = employerMatchPerPaycheck * 2;
+  
+  // Total 401k monthly contribution (yours + employer's)
+  const monthly401k = monthlyContribution + monthlyEmployerMatch;
+
+
+  // Future Value of an Annuity Formula: FV = P × [(1 + r)^n - 1] / r (So we can calculate the future value of any account plan)
+   const futureValue401k = monthly401k * 
+    ((Math.pow(1 + monthlyRate401k, months) - 1) / monthlyRate401k);
+  
+  // Taxes when you withdraw in retirement!
+  results['401k'] = futureValue401k * (1 - retirementTaxRate);
+
+  
+  // ----- ROTH IRA CALCULATION --------
+  const monthlyRateRoth = growthRates['rothIRA'] / 12; // 0.08 / 12 = 0.00667
+  
+  const monthlyRoth = monthlyContribution * (1 - currentTaxRate);
+  // No employer match, just the money someone put's in because anyone can open a Roth IRA on their own
+ const futureValueRoth = monthlyRoth * 
+    ((Math.pow(1 + monthlyRateRoth, months) - 1) / monthlyRateRoth);
+  
+  // No taxes on withdrawal 
+  results['rothIRA'] = futureValueRoth; 
+
+  
+  
+  // ----- SAVINGS CALCULATION -------
+  const monthlyRateSavings = growthRates['savings'] / 12; // 0.02 / 12 = 0.00167
+  
+  // Savings account interest is taxed every year
+  const afterTaxSavingsRate = monthlyRateSavings * (1 - currentTaxRate);
+  
+  // After-tax contribution (like Roth)
+  const monthlySavings = monthlyContribution * (1 - currentTaxRate);
+  
+  // Savings will naturally have a lower growth rate compared to the othr two plans
+  results['savings'] = monthlySavings * 
+    ((Math.pow(1 + afterTaxSavingsRate, months) - 1) / afterTaxSavingsRate);
+  
+  
+    // Return all three calculated values
+  return results;
+}
+
 
 
 const completeButton = document.getElementById('complete-lesson');
