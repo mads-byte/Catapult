@@ -6,7 +6,7 @@ for (let i = 0; i < 6; i++) {
         completed++;
     }
 }
-console.log(completed)
+console.log(sessionStorage.getItem('name'))
 
 let percentageCompleteStr = ((completed / 6) * 100).toFixed(1)
 let percentageComplete = parseFloat(percentageCompleteStr)
