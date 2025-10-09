@@ -1,3 +1,5 @@
+// const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+
 // tracks lessons completed
 let lessonsCompleted = ['incomplete', 'incomplete', 'incomplete', 'incomplete', 'incomplete', 'incomplete'];
 
@@ -518,8 +520,131 @@ arrow6.addEventListener('click', () => {
     sessionStorage.setItem('lesson6', 'complete')
     console.log(sessionStorage.getItem('lesson1'), sessionStorage.getItem('lesson3'), sessionStorage.getItem('lesson6'))
 })
-// arrow3.addEventListener('click', () => {
-//     sessionStorage.setItem('progress', '3/6')
-//     console.log(sessionStorage.getItem('progress'))
-// })
 
+
+
+
+
+
+// STOCK 
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    const form         = document.getElementById('stocks-form');
+    const btn          = document.getElementById('load-stocks');
+    const demoBtn      = document.getElementById('load-sample');
+    const symbolsInput = document.getElementById('symbols');
+    const quotesBody   = document.querySelector('#quotes tbody');
+    const eodBody      = document.querySelector('#eod tbody');
+    const errEl        = document.getElementById('stocks-error');
+
+    
+    if (!form || !btn || !symbolsInput || !quotesBody || !eodBody || !errEl) {
+      console.warn('[stocks] Widget not fully present. Missing elements:',
+        { form: !!form, btn: !!btn, symbolsInput: !!symbolsInput, quotesBody: !!quotesBody, eodBody: !!eodBody, errEl: !!errEl });
+      return;
+    }
+
+    const fmt = (n, d = 2) => (n == null || n === '' || Number.isNaN(n) ? '' : Number(n).toFixed(d));
+
+    const changeCell = (value) => {
+      if (value == null) return '';
+      const n = Number(value);
+      const cls = n > 0 ? 'up' : n < 0 ? 'down' : '';
+      return `<span class="${cls}">${fmt(n)}</span>`;
+    };
+
+    const pctFrom = (q) => {
+      if (q?.percent_change != null) return Number(q.percent_change);
+      if (q?.change != null && q?.price != null && Number(q.price) !== 0) {
+        const prev = Number(q.price) - Number(q.change);
+        if (prev !== 0) return (Number(q.change) / prev) * 100;
+      }
+      return null;
+    };
+
+    const renderQuotes = (data) => {
+      quotesBody.innerHTML = '';
+      const rows = data?.data || [];
+      rows.forEach((q) => {
+        const pct = pctFrom(q);
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${q?.symbol ?? ''}</td>
+          <td>${fmt(q?.price)}</td>
+          <td>${changeCell(q?.change)}</td>
+          <td>${pct == null ? '' : (pct >= 0 ? `<span class="up">${fmt(pct)}</span>` : `<span class="down">${fmt(pct)}</span>`)}</td>
+          <td>${q?.timestamp ? new Date(q.timestamp * 1000).toLocaleString() : ''}</td>
+        `;
+        quotesBody.appendChild(tr);
+      });
+    };
+
+    const renderEOD = (data) => {
+      eodBody.innerHTML = '';
+      const rows = data?.data || [];
+      rows.forEach((e) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${e?.symbol || ''}</td>
+          <td>${fmt(e?.close)}</td>
+          <td>${fmt(e?.high)}</td>
+          <td>${fmt(e?.low)}</td>
+          <td>${e?.date ? new Date(e.date).toLocaleDateString() : ''}</td>
+        `;
+        eodBody.appendChild(tr);
+      });
+    };
+
+    const setLoading = (loading) => {
+      btn.disabled = loading;
+      btn.textContent = loading ? 'Loading…' : 'Search';
+    };
+
+    const sanitizeSymbols = (raw) =>
+      (raw || '')
+        .split(',')
+        .map(s => s.trim().toUpperCase())
+        .filter(Boolean)
+        .join(',');
+
+    const loadData = async (symbolsRaw) => {
+      errEl.textContent = '';
+      const raw = symbolsRaw ?? (symbolsInput.value || 'AAPL').trim();
+      const symbols = sanitizeSymbols(raw);
+      if (!symbols) {
+        errEl.textContent = 'Please enter at least one ticker symbol.';
+        return;
+      }
+
+      setLoading(true);
+      try {
+        // api and express routes
+        const [quotesRes, eodRes] = await Promise.all([
+          fetch(`/api/stockdata/quotes?symbols=${encodeURIComponent(symbols)}`, { credentials: 'include' }),
+          fetch(`/api/marketstack/eod?symbols=${encodeURIComponent(symbols)}&limit=1`, { credentials: 'include' }),
+        ]);
+
+        const [quotesJson, eodJson] = await Promise.all([quotesRes.json(), eodRes.json()]);
+
+        if (!quotesRes.ok) throw new Error(quotesJson?.error || `Quotes failed (${quotesRes.status})`);
+        if (!eodRes.ok)   throw new Error(eodJson?.error   || `EOD failed (${eodRes.status})`);
+
+        renderQuotes(quotesJson);
+        renderEOD(eodJson);
+      } catch (err) {
+        console.error('[stocks] load error:', err);
+        errEl.textContent = err?.message || 'Failed to load data.';
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    // Button handler
+    form.addEventListener('submit', (e) => { e.preventDefault(); loadData(); });
+    btn.addEventListener('click', (e) => { e.preventDefault(); loadData(); });
+    
+    console.log('[stocks] widget initialized');
+  } catch (e) {
+    console.error('[stocks] init crashed before binding handlers:', e);
+  }
+});

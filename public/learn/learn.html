@@ -316,6 +316,57 @@
                                 tend to be less luquid, with fewer trades and larger differences betweeen buying and
                                 selling prices compared to exchange-traded stocks</p>
                         </div>
+
+                        
+                <section class="stock-widget" aria-labelledby="stocks-title">
+                <h2 id="stocks-title">Live Stock Lookup</h2>
+
+                <form id="stocks-form" class="stock-form" autocomplete="off">
+                    <label for="symbols" class="sr-only">Ticker symbols</label>
+                    <input id="symbols" type="text" inputmode="latin" placeholder="Enter Stock" aria-describedby="stocks-help"/>
+                    <button id="load-stocks" type="button" class="btn primary">Search</button>
+                </form>
+
+                <p id="stocks-help" class="muted">Enter a ticker symbol.</p>
+
+                <div id="stocks-error" class="alert" role="status" aria-live="polite"></div>
+
+                <div class="tables">
+                    <article class="card">
+                    <header><h3>Real Time Quotes</h3></header>
+                    <div class="table-wrap">
+                        <table id="quotes">
+                        <thead>
+                            <tr>     
+                            <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                        </table>
+                    </div>
+                    </article>
+
+                    <article class="card">
+                    <header><h3>Latest End of Day (EOD)</h3></header>
+                    <div class="table-wrap">
+                        <table id="eod">
+                        <thead>
+                            <tr>
+                            <th>Symbol</th>
+                            <th>Close</th>
+                            <th>High</th>
+                            <th>Low</th>
+                            <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                        </table>
+                    </div>
+                    </article>
+                </div>
+                </section>
+
+
                     </div>
                 </div>
                 <div id="content-hide6" class="content-hide">

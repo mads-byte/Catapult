@@ -566,6 +566,143 @@ footer {
     text-decoration: underline;
 }
 
+/* Stock */
+.stock-widget { 
+    margin: 2rem 0; 
+    display: grid; 
+    gap: 1rem; 
+}
+
+.stock-form { 
+    display: flex; 
+    gap: .5rem; 
+    flex-wrap: wrap; 
+}
+
+.stock-form input#symbols {
+  min-width: 260px; 
+  padding: .6rem .75rem; 
+  border: 1px solid #d0d5dd; border-radius: .6rem;
+  font-size: 1rem;
+}
+
+.btn { 
+    cursor: pointer; 
+    padding: .6rem .9rem; 
+    border-radius: .6rem; 
+    border: 1px solid transparent; 
+}
+
+.btn.primary { 
+    background: #0f766e; 
+    color: #fff; 
+}
+
+.btn.ghost { 
+    background: transparent; 
+    border-color: #d0d5dd; 
+    color: #0f172a; 
+}
+
+.btn[disabled] { 
+    opacity: .6; 
+    cursor: not-allowed; 
+}
+
+.muted { 
+    color: #6b7280; 
+    font-size: .9rem; 
+}
+
+.alert { 
+    min-height: 1.2rem; 
+    color: #b91c1c; 
+    font-weight: 600; 
+}
+
+.tables { 
+    display: grid; 
+    gap: 1rem; 
+    grid-template-columns: 1fr; 
+}
+
+@media (min-width: 900px) { 
+    .tables { 
+        grid-template-columns: 1fr 1fr; 
+    } 
+}
+
+.card {
+  background: #ffffff; 
+  border: 1px solid #e5e7eb; 
+  border-radius: 1rem; 
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0,0,0,.04);
+}
+
+.card header { 
+    padding: .75rem 1rem; 
+    border-bottom: 1px solid #e5e7eb; 
+    background: #f8fafc; 
+}
+
+.card h3 { 
+    margin: 0; 
+    font-size: 1rem; 
+}
+
+.table-wrap { 
+    width: 100%; 
+    overflow-x: auto; 
+}
+
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    font-size: .95rem; 
+}
+
+thead th {
+  text-align: left; 
+  padding: .6rem .75rem; 
+  background: #f1f5f9; 
+  border-bottom: 1px solid #e5e7eb;
+}
+
+tbody td { 
+    padding: .55rem .75rem; 
+    border-bottom: 1px solid #f1f5f9; 
+    white-space: nowrap; 
+}
+
+tbody tr:hover { 
+    background: #f9fafb; 
+}
+
+.up { 
+    color: #047857; 
+    font-weight: 600; 
+}
+
+.down { 
+    color: #b91c1c; 
+    font-weight: 600; 
+}
+
+/* screen-reader only label utility */
+.sr-only {
+  position: absolute; 
+  width: 1px; 
+  height: 1px; 
+  padding: 0; 
+  margin: -1px; 
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0); 
+  white-space: nowrap; 
+  border: 0;
+}
+
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     .sharing h3 {
         font-size: 1.5em;
