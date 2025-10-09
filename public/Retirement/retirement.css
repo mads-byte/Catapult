@@ -53,7 +53,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 80px;
-    background: #6b8e8e;
+    background: #6b8e8e ;
     border: solid 0px rgb(179, 0, 255);
     row-gap: 2rem;
 }
@@ -78,21 +78,8 @@ body {
     color: #8fcc8f;
 }
 
-.slide-aside img {
+.slide-aside img{
     width: 70%;
-}
-
-#complete-lesson {
-    text-decoration: none;
-    color: white;
-    font-size: 24px;
-    background-color: #003D20;
-    padding: 10px;
-    border-radius: 10px;
-}
-
-#complete-lesson:hover {
-    background-color: #B1CD2B;
 }
 
 .slide-nav {
@@ -112,9 +99,10 @@ body {
 }
 
 .slide-logo {
-    height: 40px;
+    height: 50px;
     width: auto;
     margin-bottom: 40px;
+    
 }
 
 .slide-title {
@@ -515,10 +503,12 @@ body {
 .comparison-slider-input {
     width: 100%;
     height: 10px;
-
+    background: #4a6565;
     border-radius: 5px;
     outline: none;
-    /* -webkit-appearance: none; */
+     appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     margin-bottom: 20px;
 }
 
@@ -854,21 +844,111 @@ body {
         max-width: 100%;
     }
 
-    .animation {
+    .animation{
         width: 300px;
         height: 300px;
     }
-
-
+   
+   
 }
 
-#last-slide-logo {
-    width: 20rem;
-    height: auto;
-}
-
+   #last-slide-logo{
+        width: 20rem;
+        height: auto;
+    }
 @media screen and (min-width: 768px) {
-    .animation {
+    .animation{
         width: 600px;
     }
 }
+
+
+
+
+
+/* Comparison Accounts Section */
+.comparison-accounts {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0;
+    margin: 30px 0;
+}
+
+.comparison-plan {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.comparison-plan:hover {
+    border-bottom-color: #8fcc8f;
+    transform: none;
+    box-shadow: none;
+}
+
+.comparison-plan h1 {
+    font-size: 24px;
+    color:#91ff91da;
+    margin: 0;
+    font-weight: 600;
+    text-align: left;
+    transition: 0.3s ease ease-in-out;
+}
+
+.comparison-plan h1:hover {
+    
+    color: #95e495;
+}
+
+
+.comparison-values{
+    font-size: 24px;
+    font-weight: bold;
+    color:#daffda;
+    margin: 0;
+    text-align: right;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .comparison-accounts {
+        gap: 15px;
+        margin: 20px 0;
+    }
+    
+    .comparison-plan {
+        padding-bottom: 8px;
+    }
+    
+    .comparison-plan h2 {
+        font-size: 18px;
+    }
+    
+    .comparison-values {
+        font-size: 20px;
+    }
+}
+
+#complete-lesson {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    background-color: #003D20;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#complete-lesson:hover {
+    background-color: #B1CD2B;
+}
+
+

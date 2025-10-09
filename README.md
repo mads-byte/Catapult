@@ -1,8 +1,8 @@
 # 💸 Catapult — Empowering Youth Through Financial Literacy
 
-![GitHub repo size](https://img.shields.io/github/repo-size/yourusername/catapult)
-![GitHub contributors](https://img.shields.io/github/contributors/yourusername/catapult)
-![GitHub stars](https://img.shields.io/github/stars/yourusername/catapult?style=social)
+![GitHub repo size](https://img.shields.io/github/repo-size/mads-byte/catapult)
+![GitHub contributors](https://img.shields.io/github/contributors/mads-byte/catapult)
+![GitHub stars](https://img.shields.io/github/stars/mads-byte/catapult?style=social)
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Node.js Current LTS](https://img.shields.io/badge/Node.js-v22.20.0-339933?style=for-the-badge&logo=node.js&logoColor=white)
 ![npm](https://img.shields.io/badge/npm-v10.8.2-CB3837?style=for-the-badge&logo=npm&logoColor=white)
@@ -31,7 +31,6 @@
 ✅ Interactive lessons on key money topics  
 ✅ Expandable lesson cards with smooth animations  
 ✅ Built-in quizzes and learning games  
-✅ Personalized dashboard with user progress  
 ✅ Secure MySQL backend with connection pooling  
 ✅ SSL-encrypted connections for production environments  
 
